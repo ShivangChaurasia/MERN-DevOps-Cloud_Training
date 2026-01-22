@@ -3,18 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Week 1</title>
 </head>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        margin-top: 200px;
+    }
+
+    .container {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        background-color: rgb(207, 175, 32);
+        position: relative;
+    }
+
+    .box {
+        width: 50px;
+        height: 50px;
+        background-color: #82ce48;
+        border: 1px solid black;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        position: absolute;
+    }
+
+    .top-left {
+        top: 0;
+        left: 0;
+    }
+
+    .top-right {
+        top: 0;
+        right: 0;
+    }
+
+    .bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+
+    .bottom-right {
+        bottom: 0;
+        right: 0;
+    }
+</style>
+
 <body>
-    <nav>
-        <h2>Home</h2>
-        <h2>About</h2>
-        <h2>Contact</h2>
-    </nav>
-    <div>
-        <h1>Hello World!</h1>
+
+    <div class="container">
+        <div class="box top-left"></div>
+        <div class="box top-right"></div>
+        <div class="box bottom-left"></div>
+        <div class="box bottom-right"></div>
     </div>
     
+
 </body>
 </html>
