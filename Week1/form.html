@@ -5,18 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
 </head>
+<style>
+    h1{
+        text-align: center;
+    }
+    form{
+        font-family: Arial, sans-serif;
+
+        margin-right: 750px;
+        margin-left: 750px;
+    }
+    legend {
+      background-color: black;
+      color: white;
+      padding: 3px 6px;
+    }
+    input {
+      margin: 0.4rem;
+    }
+</style>
 <body>
-    <form>
-        <h1>Contact Form</h1>
+    <h1>Contact Form</h1>
+    <form method="post">
+        <fieldset>
+            <legend>Personal Information:</legend>
         <br>
-        <label>Name:</label> <input type="text" id="name" name="name" required>
+        <label>Name:</label> <input type="text" id="name" name="name" placeholder="Enter your Name"  required>
         <br>
-        <label>Email:</label> <input type="email" id="email" name="email" required>
+        <label>Email:</label> <input type="email" id="email" name="email" placeholder="Enter your Email" required>
         <br>
-        <label>Contact No.:</label> <input type="tel" id="phone" name="phone">
+        <label>Contact No.:</label> <input type="tel" id="phone" name="phone" placeholder="Enter your Contact No.">
         <br>
-        <label>About You:</label> <textarea id="about" name="about" rows="4" required></textarea>
+        <select>
+            <option value="">Select your Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <button type="submit" onClick="alert('Form Submitted Successfully!')">Submit</button>
+        </fieldset>
     </form>
-    <button type="submit"</button>Submit</button>
+    <br>
 </body>
 </html>
