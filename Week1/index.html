@@ -8,8 +8,8 @@
 
 <style>
     body {
-        display: flex;
-        justify-content: center;
+        /* display: flex; */
+        /* justify-content: center; */
         margin-top: 200px;
     }
 
@@ -22,16 +22,30 @@
     }
 
     .box {
-        width: 50px;
-        height: 50px;
+        width: 150px;
+        height: 150px;
         background-color: #82ce48;
         border: 1px solid black;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
         position:absolute;
-        top :45%;
-        left: 45%;
+        top :37%;
+        left: 37%;
     }
 
+    .box > p:first-child{
+        background-color: red;
+    }
+    .box > p:nth-child(2){
+        background-color: rgb(0, 106, 255);
+    }
+    .box > p:nth-child(3){
+        background-color: red;
+    }
+
+    h2 > p:nth-child(1){
+        background-color: aqua;
+    }
+    
     /* .top-left {
         top: 0;
         left: 0;
@@ -56,10 +70,37 @@
 <body>
 
     <div class="container">
-        <div class="box top-left"></div>
+        <div class="box top-left">
+            <p>first p</p>
+            <p>Second p</p>
+            <p>Third P</p>
+        </div>
         <!-- <div class="box top-right"></div>
         <div class="box bottom-left"></div>
         <div class="box bottom-right"></div> -->
+    </div>
+
+    <div>
+        <h2>
+            <p>This is p 1</p>
+            <p>This is p 2</p>
+            <p>This is p 3</p>
+        </h2>
+        <h2>
+            <p>This is p 1</p>
+            <p>This is p 2</p>
+            <p>This is p 3</p>
+        </h2>
+        <h2>
+            <p>This is p 1</p>
+            <p>This is p 2</p>
+            <p>This is p 3</p>
+        </h2>
+        <h2>
+            <p>This is p 1</p>
+            <p>This is p 2</p>
+            <p>This is p 3</p>
+        </h2>
     </div>
     
 
