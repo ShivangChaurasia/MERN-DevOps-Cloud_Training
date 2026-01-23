@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition & Animation</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 200px;
+        background-color: #f9eded;
+    }
+    #box{
+        border: 2px solid black;
+        background-color: rgb(48, 190, 255);
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 3s,
+        background-color 4s,
+        border-radius 4s;
+    }
+    /* #box:hover{
+        transform: scale(1.5) translate(200px,0px) rotate(45deg);
+        border-radius: 50%;
+        background-color: #4ae769;
+    }
+     */
+    /* #inner{
+        border: 2px solid blanchedalmond;
+        width: 200px;
+        height:200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 3s,
+                    border-radius 4s;
+
+    } */
+    /* #inner:hover{
+        background-color:rgb(48, 190, 255);
+        border-radius: 50%;
+    } */
+
+
+    /* img{
+        width: 200px;
+        height: 200px;
+    } */
+    #box:hover img{
+        content: url("/images/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg");
+    }
+
+     @keyframes slide-in {
+        0%{
+            transform: translateX(0px);
+            background-color: black;
+            transition: background-color 2s;
+        }
+        50%{
+            transform: translateX(200px) rotate(180deg);
+            background-color: blueviolet;
+        }
+        75%{
+            transform: translateY(200px);
+            
+        }
+        100%{
+            
+            transform: translateX(0px) rotate(180deg);
+
+        }
+     }
+     #box{
+        animation: slide-in 6s infinite;
+
+     }
+
+    </style>
+<body>
+    <div id="box">
+        <!-- <div id="inner"><img src="/images/photo-1526779259212-939e64788e3c.jpg"></div> -->
+    </div>
+
+    
+
+
+
+</body>
+</html>
