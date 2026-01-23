@@ -1,0 +1,16 @@
+Create your own Portfolio and Add CSS to it.
+create blog app and Add CSS to it.
+
+
+
+
+
+
+
+Notes:
+    Specifity of:
+                Class/PsedoClass : 10
+                tag/elements/universal_selector : 1
+                id : 100
+                inline CSS : 1000
+
