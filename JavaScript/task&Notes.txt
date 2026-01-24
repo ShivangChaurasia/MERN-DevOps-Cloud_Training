@@ -392,13 +392,28 @@ Accessing:
 5. LOOPS
 --------------------------------------------------
 
+
+
 for...in
 • Used for objects
 • Iterates over keys
 
+   let person = { name: "John", age: 25, city: "Delhi" };
+
+   for (let key in person) {
+       console.log(key + ": " + person[key]);
+   }
+
 for...of
 • Used for arrays
 • Iterates over values
+
+   let colors = ["Red", "Green", "Blue"];
+
+   for (let color of colors) {
+       console.log(color);
+   }
+
 
 --------------------------------------------------
 6. DATA TYPES IN JAVASCRIPT
