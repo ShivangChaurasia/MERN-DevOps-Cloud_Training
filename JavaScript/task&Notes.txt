@@ -11,9 +11,296 @@ Task:
 
 
 Notes:
+JavaScript is a dynamically typed programming language, meaning variable
+types are determined at runtime and a variable can hold values of different
+data types without explicit type declaration.
+==================================================
+        THE STORY BEHIND JAVASCRIPT
+            (Complete History)
+==================================================
+
+--------------------------------------------------
+1. THE WEB BEFORE JAVASCRIPT (Early 1990s)
+--------------------------------------------------
+
+• The web was completely static
+• Websites were built using only HTML and CSS
+• No interactivity
+• No dynamic content
+• Buttons did not react
+• Every user action required a server request
+
+Example:
+Clicking a button → Server request → Full page reload
+
+Result:
+The web felt like online documents, not applications.
+
+--------------------------------------------------
+2. THE PROBLEM
+--------------------------------------------------
+
+Companies needed:
+• Interactive forms
+• Input validation before sending data to server
+• Faster user experience
+• Reduced server load
+
+Conclusion:
+Something was needed that could run directly
+inside the browser.
+
+--------------------------------------------------
+3. BIRTH OF JAVASCRIPT (1995)
+--------------------------------------------------
+
+Creator:
+• Brendan Eich
+• Worked at Netscape Communications
+
+Important Fact:
+• JavaScript was created in just 10 days
+
+Original Names:
+• Mocha (internal name)
+• LiveScript
+• JavaScript (final name)
+
+Why the name "JavaScript"?
+• Java was extremely popular at that time
+• The name was chosen mainly for marketing
+
+Note:
+JavaScript and Java are completely different languages.
+
+--------------------------------------------------
+4. ORIGINAL GOAL OF JAVASCRIPT
+--------------------------------------------------
+
+• Run inside the browser
+• Add basic interactivity
+• Validate forms
+• Manipulate HTML elements
+
+At that time:
+• JavaScript was considered a small scripting language
+• Not designed for large applications
+
+--------------------------------------------------
+5. BROWSER WARS (Mid–Late 1990s)
+--------------------------------------------------
+
+Netscape vs Microsoft (Internet Explorer)
+
+• Netscape had JavaScript
+• Microsoft created its own version called JScript
+
+Problem:
+• Different implementations in different browsers
+• Same code behaved differently
+
+Result:
+• Developer frustration
+• Unreliable behavior
+
+--------------------------------------------------
+6. STANDARDIZATION – ECMASCRIPT (1997)
+--------------------------------------------------
+
+To solve browser inconsistency:
+• JavaScript was standardized by ECMA International
+• Official standard name: ECMAScript
+
+Important:
+• JavaScript is an implementation of ECMAScript
+
+Version naming:
+• ES5
+• ES6 (ES2015)
+• ES2020 and beyond
+
+--------------------------------------------------
+7. THE DARK AGE OF JAVASCRIPT (Early 2000s)
+--------------------------------------------------
+
+• JavaScript was slow
+• Used mainly for:
+  - Form validation
+  - Simple animations
+• Considered a "toy language"
+
+Serious applications were built using:
+• Java Applets
+• Flash
+• Silverlight
+
+--------------------------------------------------
+8. THE AJAX REVOLUTION (2005)
+--------------------------------------------------
+
+AJAX:
+• Asynchronous JavaScript and XML
+
+Popularized by:
+• Google Maps
+• Gmail
+
+What changed?
+• Pages could update without reloading
+• Smooth, app-like experience
+
+Impact:
+• JavaScript proved it could power real applications
+
+--------------------------------------------------
+9. PERFORMANCE BOOST – V8 ENGINE (2008)
+--------------------------------------------------
+
+Google Chrome:
+• Introduced the V8 JavaScript Engine
+
+V8 Features:
+• Extremely fast
+• Compiles JavaScript to machine code
+
+Result:
+• Massive performance improvement
+• JavaScript was no longer slow
+
+--------------------------------------------------
+10. NODE.JS – JAVASCRIPT OUTSIDE THE BROWSER (2009)
+--------------------------------------------------
+
+Creator:
+• Ryan Dahl
+
+What changed?
+• JavaScript could now run on servers
+
+Impact:
+• Same language for frontend and backend
+• Birth of full-stack JavaScript
+
+Examples:
+• Express.js
+• MERN Stack
+• MEAN Stack
+
+--------------------------------------------------
+11. RISE OF FRAMEWORKS & LIBRARIES (2010–2015)
+--------------------------------------------------
+
+To manage growing complexity:
+• jQuery – simplified DOM manipulation
+• AngularJS – full MVC framework
+• React (2013) – component-based UI
+• Vue.js – lightweight alternative
+
+JavaScript became the center of web development.
+
+--------------------------------------------------
+12. ES6 / ES2015 – MODERN JAVASCRIPT
+--------------------------------------------------
+
+Major features introduced:
+• let, const
+• Arrow functions
+• Classes
+• Modules
+• Promises
+• Destructuring
+• Spread operator
+
+Result:
+• Cleaner syntax
+• More powerful language
+• Suitable for large-scale applications
+
+--------------------------------------------------
+13. JAVASCRIPT EVERYWHERE (2016–Present)
+--------------------------------------------------
+
+JavaScript now runs on:
+• Browsers
+• Servers (Node.js)
+• Mobile apps (React Native)
+• Desktop apps (Electron)
+• IoT devices
+• Cloud functions
+• AI tooling and automation
+
+--------------------------------------------------
+14. CURRENT STATUS OF JAVASCRIPT
+--------------------------------------------------
+
+• One of the most popular programming languages
+• Backbone of:
+  - Web development
+  - Full stack development
+  - Cloud and DevOps tooling
+
+From a 10-day scripting experiment
+to a world-dominating language.
+
+==================================================
+        JAVASCRIPT DATA TYPES
+==================================================
+
+--------------------------------------------------
+15. PRIMITIVE DATA TYPES
+--------------------------------------------------
+
+Primitive data types store a single value
+and are immutable.
+
+1. String
+   Example: "Hello"
+
+2. Number
+   Example: 10, 3.14
+
+3. BigInt
+   Example: 123456789n
+
+4. Boolean
+   Example: true, false
+
+5. Undefined
+   Example: undefined
+
+6. Null
+   Example: null
+
+7. Symbol
+   Example: Symbol("id")
+
+--------------------------------------------------
+16. NON-PRIMITIVE (REFERENCE) DATA TYPES
+--------------------------------------------------
+
+Non-primitive data types store references
+and can hold multiple values.
+
+1. Object
+   Example: { name: "Shivang", age: 21 }
+
+2. Array
+   Example: [1, 2, 3]
+
+3. Function
+   Example: function greet() {}
+
+4. Date
+   Example: new Date()
+
+5. RegExp
+   Example: /abc/
 
 
 
+-------------------------------------------------------
+Data Types
+--------------------------------------------------------
 
 var:
     var firstname; //Declaration
@@ -31,9 +318,255 @@ let:
 
 const:
     const name = "Shivang"; //You can't declare const without passing some value.
-    
-    
 
 
+
+
+--------------------------------------------------
+1. ARRAYS IN JAVASCRIPT
+--------------------------------------------------
+
+• Arrays store multiple values in a single variable
+• Arrays are zero-indexed
+• typeof array returns "object"
+
+Example:
+let arr = [10, 20, 30, 40, 50];
+
+Important Properties & Methods:
+• arr.length → number of elements
+• arr.push() → add element at end
+• arr.pop() → remove last element
+• arr.unshift() → add element at start
+• arr.shift() → remove first element
+• arr.indexOf() → find index
+• arr.splice() → add/remove elements
+• arr.slice() → extract portion (new array)
+• arr.reverse() → reverse array
+• arr.sort() → sort array
+
+--------------------------------------------------
+2. MIXED (HETEROGENEOUS) ARRAYS
+--------------------------------------------------
+
+• JavaScript arrays can store different data types
+• Arrays can contain:
+  - numbers
+  - strings
+  - booleans
+  - objects
+  - arrays
+
+Example:
+[1, "apple", true, 5.6, {}, []]
+
+--------------------------------------------------
+3. ARRAY DESTRUCTURING
+--------------------------------------------------
+
+• Used to extract values from arrays
+• Order matters
+
+Example:
+let [a, b, c] = arr;
+
+--------------------------------------------------
+4. OBJECTS IN JAVASCRIPT
+--------------------------------------------------
+
+• Objects store data in key-value pairs
+• Keys are strings, values can be any type
+
+Example:
+{
+  name: "Alice",
+  age: 20,
+  isEnrolled: true
+}
+
+Accessing:
+• object.key
+• object["key"]
+
+--------------------------------------------------
+5. LOOPS
+--------------------------------------------------
+
+for...in
+• Used for objects
+• Iterates over keys
+
+for...of
+• Used for arrays
+• Iterates over values
+
+--------------------------------------------------
+6. DATA TYPES IN JAVASCRIPT
+--------------------------------------------------
+
+JavaScript has two types of data types:
+
+--------------------
+A. Primitive Types
+--------------------
+
+• Number → numeric values
+• String → text
+• Boolean → true / false
+• Undefined → variable declared but not assigned
+• Null → intentional empty value
+• Symbol → unique identifier
+• BigInt → very large integers
+
+Primitive types store a single value.
+
+------------------------
+B. Non-Primitive Types
+------------------------
+
+• Object → collection of key-value pairs
+• Array → ordered collection
+• Function → block of reusable code
+• Date → date and time
+• RegExp → pattern matching
+
+Non-primitive types store references.
+
+--------------------------------------------------
+7. typeof OPERATOR
+--------------------------------------------------
+
+• Used to find the type of a value
+• typeof null returns "object" (JS bug)
+
+--------------------------------------------------
+8. FUNCTIONS
+--------------------------------------------------
+
+• Functions are reusable blocks of code
+• They can accept parameters
+• They can return values
+
+Example:
+function sum(a, b) {
+  return a + b;
+}
+
+--------------------------------------------------
+9. NUMBER METHODS
+--------------------------------------------------
+
+• toFixed() → decimal places
+• toPrecision() → total digits
+
+--------------------------------------------------
+10. STRING METHODS
+--------------------------------------------------
+
+• length → string size
+• toUpperCase() → uppercase
+• toLowerCase() → lowercase
+• indexOf() → position
+• slice() → extract part
+• replace() → replace text
+• split() → string to array
+• includes() → check existence
+• trim() → remove spaces
+
+--------------------------------------------------
+11. MATH OBJECT
+--------------------------------------------------
+
+• Math.abs() → absolute value
+• Math.ceil() → round up
+• Math.floor() → round down
+• Math.round() → nearest integer
+• Math.random() → random number
+• Math.max() / Math.min()
+• Math.sqrt() → square root
+• Math.pow() → power
+
+--------------------------------------------------
+12. DATE OBJECT
+--------------------------------------------------
+
+• new Date() → current date & time
+• getFullYear()
+• getMonth()
+• getDate()
+• getDay()
+• getHours()
+• getMinutes()
+• getSeconds()
+• getTime()
+
+--------------------------------------------------
+13. CONDITIONAL STATEMENTS
+--------------------------------------------------
+
+• if
+• if-else
+• else-if
+• nested if
+• switch-case
+• ternary operator (? :)
+
+--------------------------------------------------
+14. LOOPS
+--------------------------------------------------
+
+• for loop → fixed iterations
+• while loop → condition-based
+• do-while loop → runs at least once
+
+--------------------------------------------------
+15. REST OPERATOR (...)
+--------------------------------------------------
+
+• Collects multiple values into an array
+• Used in functions
+
+Example:
+function sum(...nums) {}
+
+--------------------------------------------------
+16. SPREAD OPERATOR (...)
+--------------------------------------------------
+
+• Expands values
+• Used with arrays & objects
+• Copies data
+
+Example:
+let newArr = [...arr1, ...arr2];
+
+--------------------------------------------------
+17. ARRAY METHODS (IMPORTANT)
+--------------------------------------------------
+
+• forEach() → iterate
+• map() → transform
+• filter() → condition-based selection
+• reduce() → accumulate values
+
+--------------------------------------------------
+18. ARROW FUNCTIONS
+--------------------------------------------------
+
+• Shorter function syntax
+• Uses =>
+
+Example:
+const add = (a, b) => a + b;
+
+--------------------------------------------------
+19. REAL-WORLD FILTER EXAMPLE
+--------------------------------------------------
+
+• filter() is used to extract data
+• Useful in real applications
+
+Example:
+Filter people from a specific city
 
 
