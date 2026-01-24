@@ -1,0 +1,39 @@
+Task:
+
+
+
+
+
+
+
+
+
+
+
+Notes:
+
+
+
+
+var:
+    var firstname; //Declaration
+    firstname = "Shivang";  //Assignment
+    firstname = "secName"; //Re-Assignment
+    var firstname = "ThirdName"; //Re-Declaration
+    All Possible in var
+
+
+let:
+    let name; //Declaration Possible
+    name = "Shivang"; //Assignment Possible
+    name = "Chaurasia"; //Re-Assignment Possible
+    let name= "234321"; // X Not Possible
+
+const:
+    const name = "Shivang"; //You can't declare const without passing some value.
+    
+    
+
+
+
+
