@@ -91,7 +91,7 @@
 
 // Notes:-
 // Array in-built functions (Example: length, indexOf, push, pop, shift, unshift, slice, splice, concat, join, reverse, sort, map, filter, reduce, forEach, every, some)------------
-// let arr = [1,2,3,4,5,6];
+let arr = [1,2,3,4,5,6,7,8,9];
 
 
     // The in-built function of array
@@ -120,19 +120,56 @@
 
     // ==================================
     // slice funtion:
+
         // console.log(arr.slice(2,4))
         // console.log(arr.slice(2))
 
     // ==================================
     // splice funtion:
         // console.log(arr.splice(2,4))
-        // console.log(arr.splice(2))
+        // console.log(arr)
 
     // ==================================
     // concat funtion:
         // console.log(arr.concat([7,8,9]))
 
 
+// Finding a number in arr and return true or false
+
+    // function findNum(arr, num){
+    //     if(arr.indexOf(num)>-1){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    // }
+    //  console.log(findNum([1,2,3,4,5,6,7], 3))
+    //  console.log(findNum([2,3,4,1,8,0], 7))
+
+
+//Object
+
+    // let obj1 = {
+    //     name : "Shivang",
+    //     year : "Third",
+    //     batch : "2027",
+    //     college : "LPU"
+    // }
+
+    // console.log(obj1);
+    // console.log(typeof(obj1))
+    // console.log(obj1.college)
+    
+    // obj1["skill"]= "coding";
+    // console.log(obj1);
+
+// Reverse a String
+    var str = "Shivang"
+    let sum;
+    for(let i=str.length;i>=0;i--){
+        sum+=str[i]
+    }
+    console.log(sum)
 
 
 
