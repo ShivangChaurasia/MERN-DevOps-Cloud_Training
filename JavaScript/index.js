@@ -175,35 +175,94 @@ let arr = [1,2,3,4,5,6,7,8,9];
 
 
 // Truthy and Falsey Values in JavaScript
-// Q1. let res = (null && "A") || ("" || (5 && "Hi")) find truthy and falsey value
+    // Q1. let res = (null && "A") || ("" || (5 && "Hi")) find truthy and falsey value
 
-// Here below: null && "A" will give null
-//             5 && "Hi" will give "Hi" (last truthy value)
-//             "" || "Hi" will give "Hi"
-//             null || "Hi" will give "Hi" (Output)
-// 
-// let res = (null && "A") || ("" || (5 && "Hi"))
-// console.log(res);
-// let res = !("" || 0) && (NaN || "JS")
-// console.log(res);
+        // Here below: null && "A" will give null
+        //             5 && "Hi" will give "Hi" (last truthy value)
+        //             "" || "Hi" will give "Hi"
+        //             null || "Hi" will give "Hi" (Output)
+        // 
+        // let res = (null && "A") || ("" || (5 && "Hi"))
+        // console.log(res);
+        // let res = !("" || 0) && (NaN || "JS")
+        // console.log(res);
 
 
-// Q2. create a func isTruthy to return true if any of the arguements is true else false.
+    // Q2. create a func isTruthy to return true if any of the arguements is true else false.
 
-// function isTruthy(a,b,c){
-//     if(a || b || c){
-//         return true;
-//     }else{
-//         return false;
-//     }
-// }
-// console.log(isTruthy("", NaN, 5))
+        // function isTruthy(a,b,c){
+        //     if(a || b || c){
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // }
+        // console.log(isTruthy("", NaN, 5))
 
-// ============================
-// Type coercion in JavaScript is the automatic or explicit conversion of values from one data type to another
-// let x = "120px"
-// console.log(parseInt(x))
+        // ============================
+        // Type coercion in JavaScript is the automatic or explicit conversion of values from one data type to another
+        // let x = "120px"
+        // console.log(parseInt(x))
 
+        // console.log(true+false) //will give false with help of Coercion
+        // console.log(10 * "abc") // will give NaN as "abc" will be given credit of NaN
+
+// ===================================================
+// Wap to check if the given input is Array, Object, null or other data types
+    // function allChecker(x){
+        // if(Array.isArray(x)){
+            // console.log("This is Array");
+        // }else if( x!==null && typeof(x)==="object"){
+            // console.log("This is Object");
+        // }
+        // else if(typeof x === "object"){
+            // console.log("This is null");
+        // }else{
+            // console.log(typeof(x));
+        // }
+    // }
+    // allChecker({name : "Shivang"})
+    // let arr = [];
+    // allChecker(arr)
+    // allChecker(null)
+
+
+
+// ============================================================
+// Primitive - call by value: In call by value, the function receives a copy of the value of the argument. 
+    // let a = 20;
+    // console.log(a);
+    // let b= a;
+    // console.log(b);
+    // console.log(a);
+    // b=30;
+    // console.log(b);
+    // console.log(a); //In primitive a will not be updated by the infulence of b
+
+// Non-Primitive - call by reference: In call by reference, the function receives a reference to the original value of the argument.
+    // let arr = [1,2,5,6]
+    // let arr1 = arr;
+    // console.log(arr1);
+    // console.log(arr);
+
+    // arr1.push(87);
+    // console.log(arr1);
+    // console.log(arr); //In non-primitive arr will be updated by the infulence of arr1
+
+// ============================================================
+
+// Arrow Function:
+    // let greet = (name)=> `Welcome ${name}`
+    // console.log(greet("Shivang"))
+
+// Q1. Find a number even or Odd using Arrow Function
+
+    let eo = (x)=>{
+        if(x%2==0){
+            console.log("even");
+        }else{console.log("odd")}
+    }
+    eo(5);
 
 
 
