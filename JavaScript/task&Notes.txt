@@ -643,6 +643,99 @@ Call by Value vs Call by Reference using Primitive and Non-Primitive Data Types:
           console.log(a); //In primitive a will not be updated by the infulence of b
 ---------------------------------------------------------
 
+Object Destructuring:
+
+   Object destructuring is a syntax that allows you to extract
+   properties from an object and assign them to variables
+   in a more concise way.
+
+   Example:
+     const person = {
+        name: "Shivang",
+        age: 21,
+        city: "Delhi"
+     };
+
+     // Traditional way
+     const name = person.name;
+     const age = person.age;
+     const city = person.city;
+
+     // Using object destructuring
+     const { name, age, city } = person;
+
+     console.log(name); // Output: Shivang
+     console.log(age);  // Output: 21
+     console.log(city); // Output: Delhi
+
+
+-------------------
+
+Spread Operator with Objects:
+
+   The spread operator (...) allows you to create a new object
+   by copying properties from an existing object.
+
+   Example:
+     const original = {
+        name: "Shivang",
+        age: 21
+     };
+
+     const copy = { ...original, city: "Delhi" };
+
+     console.log(copy);
+     // Output: { name: "Shivang", age: 21, city: "Delhi" }
+
+-------------------
+Rest Operator with Objects:
+
+   The rest operator (...) allows you to collect the remaining
+   properties of an object into a new object.
+
+   Example:
+     const person = {
+        name: "Shivang",
+        age: 21,
+        city: "Delhi"
+     };
+
+     const { name, ...rest } = person;
+
+     console.log(name); // Output: Shivang
+     console.log(rest); // Output: { age: 21, city: "Delhi" }
+
+------------------------
+Option Chaining (?.):
+
+   Option chaining is a syntax that allows you to safely access
+   nested properties of an object without causing an error
+   if a property is undefined or null.
+
+   Example:
+     const person = {
+        name: "Shivang",
+        address: {
+           city: "Delhi"
+        }
+     };
+
+     // Accessing nested property safely
+     const city = person.address?.city;
+     console.log(city); // Output: Delhi
+
+     // If address is undefined
+     const person2 = {
+        name: "Ravi"
+     };
+
+     const city2 = person2.address?.city;
+     console.log(city2); // Output: undefined (no error)
+
+--------------------------------------------------
+
+   
+
 
 
 
