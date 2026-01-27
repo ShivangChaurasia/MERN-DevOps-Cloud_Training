@@ -91,7 +91,7 @@
 
 // Notes:-
 // Array in-built functions (Example: length, indexOf, push, pop, shift, unshift, slice, splice, concat, join, reverse, sort, map, filter, reduce, forEach, every, some)------------
-let arr = [1,2,3,4,5,6,7,8,9];
+// let arr = [1,2,3,4,5,6,7,8,9];
 
 
     // The in-built function of array
@@ -418,8 +418,14 @@ let arr = [1,2,3,4,5,6,7,8,9];
 
 
 
+// For-Each:
+    // here, element: "it is acting as key" [1,2,3,4,5,6,7]
+    //       index: "it is acting as value" 0,1,2,3,4,5,6
+    // let arr = [1,2,3,4,5,6,7]
 
-
+    // arr.forEach((element,index) => {
+    //     console.log(index, element)
+    // })
 
 
 
