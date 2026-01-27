@@ -257,19 +257,156 @@ let arr = [1,2,3,4,5,6,7,8,9];
 
 // Q1. Find a number even or Odd using Arrow Function
 
-    let eo = (x)=>{
-        if(x%2==0){
-            console.log("even");
-        }else{console.log("odd")}
-    }
-    eo(5);
+    // let eo = (x)=>{
+    //     if(x%2==0){
+    //         console.log("even");
+    //     }else{console.log("odd")}
+    // }
+    // eo(5);
+
+// Q2. Find the sum of two numbers using Arrow Function
+
+        // let sum = (a,b)=> a+b;
+        // console.log(sum(2,3))
+
+// =====================================================================
+// Destructuring: Spread and Rest Operator
+// ------------------------------------------
+    // let person = {
+    //     name : "Shivang",
+    //     age : 21,
+    //     College : "LPU",
+    //     Experience : [{designation : "Software engineer"}, {degree : "B.Tech"}, {role : "Full-Stack Developer"}]
+    // }
+
+    // let {Experience} = person
+    // let [obj1, obj2, obj3] = Experience
+    // let {designation} = obj1;
+
+    // console.log(designation)
+
+    // --------------------------------------
+    // let user1 = {
+    //     id : 999,
+    //     first : "Shivang",
+    //     edu : {
+    //         degree : [
+    //             {name : "BCA"},
+
+    //         ]
+    //     },
+    // }
+
+    // let {edu} = user1;
+    // let {degree} = edu
+    // let [obj] = degree
+    // let {name} = obj
+    // console.log(name)
+
+
+    // ---------------------------------------
+    // let user = {
+    //     first : "Shivang",
+    //     posts : [
+    //         {title : "title1", comments: 10},
+    //         {title : "title2", comments: 11},
+    //     ],
+    // }
+
+    // let {posts} = user;
+    // let [obj1,obj2] = posts;
+    // let {comments} = obj1
+    // console.log(comments)
+
+
+    // -----------------------------------------
+
+    // let user1 = {
+    //     id : 999,
+    //     first : "Shivang",
+    //     edu : {
+    //         degree : [
+    //             {name : "BCA"},
+
+    //         ]
+    //     },
+    // }
+    // for(let i in user1){
+    //     console.log(i)
+    // }
+
+
+// ------------------------------------------------
+
+// WAP to return the first and last element of an array using destructuring
+
+    // let arr = [1,2,7,8];
+
+    // function firstLast(arr){
+    //     let [first,,,last ] = arr;
+    //     return {first, last};
+
+    // }
+    // console.log(firstLast(arr))
+// ----------------------------------------------------------
+    // REST Operator
+
+    // function greet(...details){
+    //     let [name, age, college] = details
+    //     console.log(`Welcome ${name}, Your age is ${age}, You study at ${college}`)
+    // }
+    // greet("Shivang",21,"LPU")
+
+
+    // let arr = {
+    //     name : "Shivang",
+    //     age: 21,
+    //     college: "LPU"
+    // }
+    // let {age,...details} = arr;
+    // console.log(details)
+
+// ----------------------------------------------------
+    // Option Chaining : It is used to access the properties of an object that may be null or undefined.
+    // ------------------
+
+
+    // let user = {
+    //     name : "Shivang",
+    //     age : 21,
+    //     edu : {
+    //         degree : [
+    //             {name : "BCA"},
+    //             {name : "B.Tech"},
+    //         ]
+    //     },
+    // }
+    // let degree = user?.edu?.degree?.[0]?.name
+    // console.log(degree)
+
+    
 
 
 
+// WAP to return the age of a user if it is available, otherwise return 0.
+    // let user = {
+    //     name : "Shivang",
+    //     // age : 21,
+    //     edu : {
+    //         degree : [
+    //             {name : "BCA"},
+    //             {name : "B.Tech"},
+    //         ]
+    //     },
+    // }
+    // console.log(user?.age ? user.age :  0)
 
+    // WAP  to return the price of a product after applying a 10% discount if the price is available, otherwise return "price not given".
 
-
-
+    // let product = {
+    //     price : 10000
+    // }
+    // console.log(product?.price ? product.price - (0.1*product.price) : "price not given");
 
 
 
