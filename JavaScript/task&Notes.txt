@@ -1,5 +1,7 @@
 Task:
-
+   Portfolio
+   Blog App
+   Form
 
 
 
@@ -585,3 +587,22 @@ Example:
 Filter people from a specific city
 
 
+
+-----------------------------------------
+
+There are 6 falsey values:
+null
+undefined
+""
+0
+false
+NAn
+
+
+-------------------------------------------------
+
+What is Coersion in JavaScript?
+   Type Coersion is the automatic or implicit conversion of values
+   from one data type to another (such as strings to numbers).
+   In JavaScript, this often happens during operations involving
+   different data types.

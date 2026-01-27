@@ -164,12 +164,47 @@ let arr = [1,2,3,4,5,6,7,8,9];
     // console.log(obj1);
 
 // Reverse a String
-    var str = "Shivang"
-    let sum;
-    for(let i=str.length;i>=0;i--){
-        sum+=str[i]
-    }
-    console.log(sum)
+    // var str = "Shivang"
+    // let sum;
+    // for(let i=str.length;i>=0;i--){
+    //     sum+=str[i]
+    // }
+    // console.log(sum)
+
+
+
+
+// Truthy and Falsey Values in JavaScript
+// Q1. let res = (null && "A") || ("" || (5 && "Hi")) find truthy and falsey value
+
+// Here below: null && "A" will give null
+//             5 && "Hi" will give "Hi" (last truthy value)
+//             "" || "Hi" will give "Hi"
+//             null || "Hi" will give "Hi" (Output)
+// 
+// let res = (null && "A") || ("" || (5 && "Hi"))
+// console.log(res);
+// let res = !("" || 0) && (NaN || "JS")
+// console.log(res);
+
+
+// Q2. create a func isTruthy to return true if any of the arguements is true else false.
+
+// function isTruthy(a,b,c){
+//     if(a || b || c){
+//         return true;
+//     }else{
+//         return false;
+//     }
+// }
+// console.log(isTruthy("", NaN, 5))
+
+// ============================
+// Type coercion in JavaScript is the automatic or explicit conversion of values from one data type to another
+// let x = "120px"
+// console.log(parseInt(x))
+
+
 
 
 
