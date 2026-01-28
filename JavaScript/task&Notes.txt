@@ -734,7 +734,59 @@ Option Chaining (?.):
 
 --------------------------------------------------
 
+   What is High Order Function in JavaScript?
+   A higher-order function is a function that either takes one or more functions as arguments or returns a function as its result.
+   Example:
+     // Function that takes another function as an argument
+     function greet(name, formatter) {
+        return "Hello, " + formatter(name);
+     }
+
+     function upperCaseName(name) {
+        return name.toUpperCase();
+     }
+
+     console.log(greet("Shivang", upperCaseName)); // Output: Hello, SHIVANG
+
+     // Function that returns another function
+     function multiplier(factor) {
+        return function(number) {
+           return number * factor;
+        };
+     }
+
+     const double = multiplier(2);
+     console.log(double(5)); // Output: 10
+
+--------------------------------------------------
+
+
+// =======================================================================
+    // Data Object Model : DOM Manipulation
+// =======================================================================
+
+How does array.map work?
+
+   The map() method creates a new array populated with the results
+   of calling a provided function on every element in the calling array.
    
+
+   Syntax:
+     array.map(function(currentValue, index, array) {
+        // Return element for new array
+     });
+
+   Example:
+     const numbers = [1, 2, 3, 4];
+     const doubled = numbers.map(function(num) {
+        return num * 2;
+     });
+
+     console.log(doubled); // Output: [2, 4, 6, 8]
+
+   Using Arrow Function:
+     const doubledArrow = numbers.map(num => num * 2);
+     console.log(doubledArrow); // Output: [2, 4, 6, 8]
 
 
 

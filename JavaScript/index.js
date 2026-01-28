@@ -391,7 +391,6 @@
     // let degree = user?.edu?.degree?.[0]?.name
     // console.log(degree)
 
-    
 
 
 
@@ -429,16 +428,139 @@
 
 
 
+// =======================================================================
+    // Data Object Model : DOM Manipulation
+// =======================================================================
+
+// WAP to print the name and age of each person in the array using forEach loop.
+
+    // let obj = [
+    //     {
+    //         name: "Shivang",
+    //         age : 21
+    //     },
+    //     {
+    //         name: "Sourav",
+    //         age: 22
+    //     },
+    //     {
+    //         name: "Rishav",
+    //         age: 23
+    //     }
+    // ]
+    
+    // obj.forEach((key, value)=>{
+    //     console.log(key.name, key.age);
+    // })
 
 
 
+// Map Function:
+    // let array = [1,2,3,4,5,6,7]
+    // let newArr = array.map((num)=>num*2);
+    // console.log(newArr);
 
 
+    // let string = ["shivang", "sourav", "rishav"]
+    // let newArr = string.map((str)=>str.toUpperCase())
+    // console.log(newArr)
 
 
+    // let array = [1,2,3,4,5,6,7]
+
+    // let newArr = array.map((num)=>num*2);
+    // console.log(newArr);
+
+    // let multiple = array.map((num)=>num+10)
+    // console.log(multiple)
 
 
+    // let string = ["shivang", "sourav", "rishav"]
+    // let newArr = string.map((str)=>str.toUpperCase())
+    // console.log(newArr)
 
+    // let numStr = ["1","2","3","4","5"]
+    // let convert = numStr.map((str)=>
+        // str = parseInt(str)
+    // )
+    // console.log(convert)
+
+// WAP to check if each number in the array is even or odd using map function.
+    // let numStr = ["1","2","3","4","5"]
+    // let convert = numStr.map((str)=>{
+    //     str = parseInt(str)
+    //     if(str%2==0){
+    //         console.log("odd")
+    //     }else{console.log("even")}
+    // })
+
+
+// WAP to count the frequency of each element in an array using map function.
+
+
+    // let arr = [1,2,1,3,3,"hi","hello",1,1];
+    // let freq = {};
+    // arr.forEach((num)=>{
+    //     freq[num] ? freq[num]++ : freq[num]=1;
+    // })
+    // console.log(freq);
+
+
+// WAP to capitalize the first letter of each word in a sentence using map function and remove any extra spaces between words.
+    // let arr = ["hello world", "good day"];
+    // arr = arr.map(str =>
+    //     str.split(" ").map(word => word[0].toUpperCase() + word.slice(1)).join("")
+    // );
+    // console.log(arr);
+
+    //output: ["HelloWorld", "GoodDay"]
+
+// WAP to capitalize the first letter of each word in a sentence using map function.
+    // let arr = ["apple", "orange", "pine"];
+    
+    // arr = arr.map(str =>
+    //     str[0].toUpperCase()+str.slice(1)
+    //     )
+    // console.log(arr)
+
+
+// WAP to filter all the even numbers from an array using filter function.
+    // let arr = [1,2,3,4,5,6,7,8,9,10];
+    // let even = arr.filter((num)=>{
+    //     return num%2==0
+    // })
+    // console.log(even)
+
+// WAP to filter all the non-empty strings from an array using filter function.
+    // let string = [" "," ","f","r","                      "]
+    // string = string.filter(str => (str.trim().length!==0))
+    // console.log(string)
+
+// WAP to filter all the users who are above 18 years old using filter function.
+    // let userArr = [
+    //     {
+    //         name : "Shivang",
+    //         age : 20
+    //     },
+    //     {
+    //         name : "Sourav",
+    //         age : 18
+    //     },
+    //     {
+    //         name : "Rishav",
+    //         age : 21
+    //     }
+
+    // ]
+    // let newArr = userArr.filter(user => user.age>18)
+    // console.log(newArr)
+
+
+// WAP to filter all the strings that start with a capital letter and are not numbers using filter function.
+
+    // let arr = ["Hello", "find", "Found", "Redirect", "my", "123"]
+    // arr = arr.filter( str => isNaN(parseInt(str)) && str[0] === str[0].toUpperCase())
+    // console.log(arr)
 
 
 
