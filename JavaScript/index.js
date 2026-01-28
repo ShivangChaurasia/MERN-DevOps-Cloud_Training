@@ -565,6 +565,26 @@
 
 
 
+// Reduce Method;
+    // let nums = [1,2,3,4,5,6]
+    // let sum = nums.reduce((first, next)=> first+next)//Without defining Initial value
+    // console.log(sum)
+
+    // let nums = [1,2,3,4,5,6]
+    // let pdt = nums.reduce((first, next)=> first*next,1)
+    // console.log(pdt)
+
+    // let string = ["apple", "orange", "pineapple", "cherry", "apple"]
+    // let freq = string.reduce((arr,next)=>{
+    //     arr[next]  ? arr[next]++ : arr[next]=1;
+    //     return arr;
+    // },{})
+    // console.log(freq);
+    // Output: { apple: 2, orange: 1, pineapple: 1, cherry: 1 }
+
+
+
+
 
 
 
