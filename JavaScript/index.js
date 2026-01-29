@@ -427,11 +427,6 @@
     // })
 
 
-
-// =======================================================================
-    // Data Object Model : DOM Manipulation
-// =======================================================================
-
 // WAP to print the name and age of each person in the array using forEach loop.
 
     // let obj = [
@@ -581,97 +576,6 @@
     // },{})
     // console.log(freq);
     // Output: { apple: 2, orange: 1, pineapple: 1, cherry: 1 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
