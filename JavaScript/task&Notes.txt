@@ -838,14 +838,75 @@ Refer javaScript.js
 
 
 
+// =======================================================================
+    // Events in JavaScript
+// =======================================================================
 
+Event Bubbling:
+   Event bubbling is a type of event propagation in the HTML DOM
+   where the event starts from the deepest target element
+   and then bubbles up to its parent elements.
 
+   Example:
+     <div id="parent">
+        <button id="child">Click Me</button>
+     </div>
 
+     <script>
+        document.getElementById("child").addEventListener("click", function() {
+           alert("Child Clicked");
+        });
 
+        document.getElementById("parent").addEventListener("click", function() {
+           alert("Parent Clicked");
+        });
+     </script>
 
+   When you click the button, the alert for "Child Clicked"
+   will show first, followed by "Parent Clicked".
+------------------------------------------
+Event Capturing:
+   Event capturing is another type of event propagation in the HTML DOM
+   where the event starts from the outermost element and then moves down to the target element.
 
+   Example:
+     <div id="parent">
+        <button id="child">Click Me</button>
+     </div>
+       <script>
+         document.getElementById("parent").addEventListener("click", function() {
+             alert("Parent Clicked");
+         }, true); // true for capturing
+   
+         document.getElementById("child").addEventListener("click", function() {
+             alert("Child Clicked");
+         }, true); // true for Capturing
+         </script>
+   When you click the button, the alert for "Parent Clicked"
+   will show first, followed by "Child Clicked".
+-----------------------------------------------
+Event Delegation:
+   Event delegation is a technique in JavaScript
+   where a single event listener is added to a parent element
+   and handles events for its child elements.
 
+   Example:
+     <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+     </ul>
 
+     <script>
+        document.getElementById("itemList").addEventListener("click", function(event) {
+           if (event.target && event.target.nodeName === "LI") {
+              alert("You clicked on " + event.target.innerText);
+           }
+        });
+     </script>
+
+   When you click on any list item, the alert will show the text of the clicked item.
+------------------------------------------------------
 
 
 
