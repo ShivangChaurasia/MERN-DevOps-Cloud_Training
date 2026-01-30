@@ -109,24 +109,31 @@
 
 // nav
 
-let nav = document.getElementById("nav")
-nav.style.backgroundColor = "cyan"
-nav.style.display = "flex"
-nav.style.justifyContent = "space-between"
+// let nav = document.getElementById("nav")
+// nav.style.backgroundColor = "cyan"
+// nav.style.display = "flex"
+// nav.style.justifyContent = "space-between"
 
-let heading = document.createElement("h1")
-heading.innerText  = "Design"
+// let heading = document.createElement("h1")
+// heading.innerText  = "Design"
 
-let div = document.createElement("div")
+// let div = document.createElement("div")
 
-let home = document.createElement("a")
-home.innerText = "Home"
-let about = document.createElement("a")
-about.innerText = "About"
-let contact = document.createElement("a")
-contact.innerText = "Contact"
-div.append(home,about,contact);
-nav.append(heading,div);
+// let home = document.createElement("a")
+// home.innerText = "Home"
+// let about = document.createElement("a")
+// about.innerText = "About"
+// let contact = document.createElement("a")
+// contact.innerText = "Contact"
+// div.append(home,about,contact);
+// nav.append(heading,div);
+
+
+
+// ===========================================================================================
+    // END OF DOM
+// ===========================================================================================
+
 
 
 
