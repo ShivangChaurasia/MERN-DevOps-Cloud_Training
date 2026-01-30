@@ -971,7 +971,27 @@ Closures in JavaScript:
 ------------------------------------------------------
 
 
+Lexical Scope in JavaScript:
 
+   Lexical scope means that the accessibility of variables
+   is determined by the physical structure of the code
+   (where the variables are declared).
+
+   Example:
+     function outerFunction() {
+        var outerVar = "I am outside";
+
+        function innerFunction() {
+           console.log(outerVar); // Accessible due to lexical scope
+        }
+
+        innerFunction();
+     }
+
+     outerFunction();
+
+   In this example, innerFunction can access outerVar
+   because it is defined within the lexical scope of outerFunction.
 
 
 
