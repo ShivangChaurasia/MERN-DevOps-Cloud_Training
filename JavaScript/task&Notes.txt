@@ -908,6 +908,70 @@ Event Delegation:
    When you click on any list item, the alert will show the text of the clicked item.
 ------------------------------------------------------
 
+Scope in JavaScript:
+
+   Scope in JavaScript refers to the current context of code,
+   which determines the accessibility of variables and functions.
+
+   Types of Scope:
+     1. Global Scope:
+        Variables declared outside any function
+        are in the global scope and accessible from anywhere.
+
+     2. Local Scope:
+        Variables declared within a function
+        are in the local scope and accessible only within that function.
+
+     3. Block Scope:
+        Variables declared with let or const
+        inside a block (e.g., inside { }) are in block scope
+        and accessible only within that block.
+
+   Example:
+     var globalVar = "I am global";
+
+     function myFunction() {
+        var localVar = "I am local";
+        if (true) {
+           let blockVar = "I am block scoped";
+           console.log(blockVar); // Accessible here
+        }
+        console.log(localVar); // Accessible here
+        // console.log(blockVar); // Not accessible here (Error)
+     }
+
+     myFunction();
+     console.log(globalVar); // Accessible here
+     // console.log(localVar); // Not accessible here (Error)
+------------------------------------------------------
+
+Closures in JavaScript:
+
+   A closure is a function that retains access to its lexical scope,
+   even when the function is executed outside that scope.
+
+   Example:
+     function outerFunction(outerVariable) {
+        return function innerFunction(innerVariable) {
+           console.log("Outer Variable: " + outerVariable);
+           console.log("Inner Variable: " + innerVariable);
+        };
+     }
+
+     const newFunction = outerFunction("outside");
+     newFunction("inside");
+
+   Output:
+     Outer Variable: outside
+     Inner Variable: inside
+
+   In this example, innerFunction forms a closure
+   that captures the variable outerVariable from its outer scope.
+
+------------------------------------------------------
+
+
+
 
 
 
