@@ -30,3 +30,19 @@
 //         console.log(i)
 //     },10)
 // }
+
+
+// var x=5;
+// function test(){
+//     console.log(x) //Will try to find it inside the function scope
+//     var x = 20;
+// }
+// test()
+
+var Show = function(){
+    console.log("First")
+}
+function show(){
+    console.log("Second")
+}
+show();

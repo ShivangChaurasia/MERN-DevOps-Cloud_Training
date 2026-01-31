@@ -995,6 +995,456 @@ Lexical Scope in JavaScript:
 
 
 
+============================================================
+HOISTING IN JAVASCRIPT
+============================================================
+
+1. Hoisting is a JavaScript mechanism where variable and function
+declarations are moved to the top of their containing scope
+during the compilation phase before code execution.
+
+2. This means that you can use variables and functions
+before they are declared in the code.
+
+3. However, only the declarations are hoisted, not the initializations.
+Example 1: Variable Hoisting with var
+
+   console.log(myVar); // Output: undefined (not ReferenceError)
+   var myVar = 10;
+   console.log(myVar); // Output: 10
+
+   // Behind the scenes, JavaScript interprets it as:
+   var myVar; // Declaration hoisted
+   console.log(myVar); // undefined
+   myVar = 10; // Initialization
+   console.log(myVar); // 10
+
+Example 2: Function Hoisting
+   greet(); // Output: "Hello, World!"
+
+   function greet() {
+      console.log("Hello, World!");
+   }
+
+   // Behind the scenes, JavaScript interprets it as:
+   function greet() {
+      console.log("Hello, World!");
+   }
+   greet(); // "Hello, World!"
+
+Example 3: let and const Hoisting
+   console.log(myLet); // ReferenceError: Cannot access 'myLet' before initialization
+   let myLet = 20;
+   console.log(myLet); // Output: 20
+   // Behind the scenes, JavaScript interprets it as:
+   let myLet; // Declaration hoisted but not initialized
+
+   console.log(myConst); // ReferenceError: Cannot access 'myConst' before initialization
+   const myConst = 30;
+   console.log(myConst); // Output: 30
+   // Behind the scenes, JavaScript interprets it as:
+   const myConst; // Declaration hoisted but not initialized
+
+Example 4: Function Expressions
+   greetExpr(); // TypeError: greetExpr is not a function
+
+   var greetExpr = function() {
+      console.log("Hello from function expression!");
+   };
+
+   // Behind the scenes, JavaScript interprets it as:
+   var greetExpr; // Declaration hoisted
+   greetExpr(); // TypeError: greetExpr is not a function
+   greetExpr = function() {
+      console.log("Hello from function expression!");
+   };
+
+Example 5: Arrow Functions
+   greetArrow(); // TypeError: greetArrow is not a function
+
+   const greetArrow = () => {
+      console.log("Hello from arrow function!");
+   };
+
+   // Behind the scenes, JavaScript interprets it as:
+   const greetArrow; // Declaration hoisted but not initialized
+   greetArrow(); // TypeError: greetArrow is not a function
+   greetArrow = () => {
+      console.log("Hello from arrow function!");
+   };
+
+Comparison Table:
+| Declaration Type     | Hoisted?          | Initial Value Before Declaration | Error if Accessed Before Declaration |
+|----------------------|-------------------|----------------------------------|--------------------------------------|
+| var                  | Yes               | undefined                        | No                                   |
+| let                  | Yes               | Not initialized                  | Yes (ReferenceError)                 |
+| const                | Yes               | Not initialized                  | Yes (ReferenceError)                 |
+| Function Declaration | Yes               | N/A                              | No                                   |
+| Function Expression  | Yes (var only)    | undefined (var)                  | Yes (TypeError)                      |
+
+Temporal Dead Zone (TDZ):
+   The TDZ is the time between entering a scope
+   and the point where a variable declared with let or const
+   is initialized. Accessing the variable in this zone
+   results in a ReferenceError.
+   Example:
+     {
+        console.log(myLet); // ReferenceError
+        let myLet = 10;
+     }
+
+4. In summary, hoisting allows functions and var-declared variables
+to be used before their declaration, but let and const variables are not initialized until their declaration is reached, hence they throw a ReferenceError if accessed before initialization.
+============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
