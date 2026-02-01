@@ -58,13 +58,92 @@
 
 
 
-function test(){
-    console.log(x)
-    var a =20;
-    let b = 30;
-    function print(){
-        console.log(a+b)
-    }
-    print()
-}
-test()
+// function test(){
+//     console.log(x)
+//     var a =20;
+//     let b = 30;
+//     function print(){
+//         console.log(a+b)
+//     }
+//     print()
+// }
+// test()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
