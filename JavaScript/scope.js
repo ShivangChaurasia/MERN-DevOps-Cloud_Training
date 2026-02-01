@@ -59,18 +59,38 @@
 
 
 // function test(){
-//     console.log(x)
-//     var a =20;
 //     let b = 30;
 //     function print(){
-//         console.log(a+b)
+//         console.log(b)
 //     }
-//     print()
+//     return print()
 // }
-// test()
+// let closure = test()
+
+
+// function counter(){
+//     let count = 0;
+//     return function(){
+//         count++;
+//         console.log(count)
+//     }
+// }
+// let c = counter();
+// console.log(c)
 
 
 
+function test(){
+    let count =0 ;  //Updated = 1,2,3
+    return function inner(){
+        ++count;    // first = 1,2,3
+        console.log(count) //1,2,3
+    }
+}
+let counter = test();
+counter() //1
+counter() //2
+counter() //3
 
 
 

@@ -1097,7 +1097,77 @@ Temporal Dead Zone (TDZ):
 to be used before their declaration, but let and const variables are not initialized until their declaration is reached, hence they throw a ReferenceError if accessed before initialization.
 ============================================================
 
+Context Binding
+   Context binding in JavaScript refers to the way the value of 'this'
+   is determined within functions and methods.
 
+   1. Global Context:
+      In the global scope, 'this' refers to the global object
+      (window in browsers, global in Node.js).
+
+      Example:
+        console.log(this); // In browser: Window object
+
+   2. Function Context:
+      In a regular function, 'this' refers to the global object
+      (in non-strict mode) or undefined (in strict mode).
+
+      Example:
+        function showThis() {
+           console.log(this);
+        }
+        showThis(); // In browser: Window object (non-strict mode)
+
+   3. Method Context:
+      When a function is called as a method of an object,
+      'this' refers to the object itself.
+
+      Example:
+        const obj = {
+           name: "Shivang",
+           greet: function() {
+              console.log(this.name);
+           }
+        };
+        obj.greet(); // Output: Shivang
+
+   4. Constructor Context:
+      In a constructor function, 'this' refers to the newly created object.
+
+      Example:
+        function Person(name) {
+           this.name = name;
+        }
+        const person1 = new Person("Ravi");
+        console.log(person1.name); // Output: Ravi
+
+   5. Explicit Binding:
+      You can explicitly set the value of 'this' using call(), apply(), or bind().
+
+      Example:
+        function greet() {
+           console.log(this.name);
+        }
+        const person = { name: "Anita" };
+        greet.call(person); // Output: Anita
+
+   6. Arrow Functions:
+      Arrow functions do not have their own 'this'.
+      They inherit 'this' from the surrounding lexical context.
+
+      Example:
+        const obj = {
+           name: "Shivang",
+           greet: () => {
+              console.log(this.name);
+           }
+        };
+        obj.greet(); // Output: undefined (or global object's name)
+
+   In summary, context binding determines what 'this' refers to
+   based on how a function is called.
+
+============================================================
 
 
 
