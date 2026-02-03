@@ -1340,6 +1340,57 @@ Promises in JavaScript
    - Understanding Promises is essential for modern JavaScript development.
 ----------------------------------------------------------------------------------------------
 
+=========================================================================================
+JSON (JavaScript Object Notation)
+=========================================================================================
+
+1. What is JSON?
+   - JSON is a lightweight data interchange format.
+   - It is easy for humans to read and write.
+   - It is easy for machines to parse and generate.
+   - JSON is language-independent but uses conventions familiar to programmers of the C family of languages.
+2. JSON Syntax:
+   - Data is represented as key-value pairs.
+   - Keys are strings enclosed in double quotes.
+   - Values can be strings, numbers, objects, arrays, booleans, or null.
+   - Objects are enclosed in curly braces {}.
+   - Arrays are enclosed in square brackets [].
+
+   Example:
+   {
+      "name": "Shivang",
+      "age": 21,
+      "isStudent": true,
+      "courses": ["Math", "Science"],
+      "address": {
+         "city": "Delhi",
+         "zip": "110001"
+      }
+   }
+
+3. Converting JavaScript to JSON:
+   const obj = {
+      name: "Shivang",
+      age: 21
+   };
+   const jsonString = JSON.stringify(obj);
+   console.log(jsonString); // '{"name":"Shivang","age":21}'
+
+4. Converting JSON to JavaScript:
+   const jsonString = '{"name":"Shivang","age":21}';
+   const obj = JSON.parse(jsonString);
+   console.log(obj.name); // "Shivang"
+
+5. Common Uses of JSON:
+   - Data exchange between a server and a web application.
+   - Configuration files.
+   - Storing data in NoSQL databases.
+6. Conclusion:
+   - JSON is a widely used format for data interchange.
+   - It is easy to work with in JavaScript using JSON.stringify() and JSON.parse().
+   - Understanding JSON is essential for web development and API interactions.
+---------------------------------------------------------------------------------------------
+
 
 
 

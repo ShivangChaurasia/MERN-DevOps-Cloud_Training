@@ -22,6 +22,7 @@
 // console.log("End");
 
 
+//setInterval-----------------------------------------
 // wac to show setInterval func
 // let i = 0;
 // const id = setInterval(() => {
@@ -34,6 +35,8 @@
 // }, 1000);
 
 
+
+// Promise--------------------------------------
 // console.log("Start")
 // setTimeout(()=>{
 //     console.log("setTimeout");
@@ -43,6 +46,24 @@
 //     console.log("Promise")
 // })
 // console.log("End")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
