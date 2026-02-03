@@ -1450,6 +1450,7 @@ Local Storage vs Session Storage in JavaScript:
 | Persistence       | No expiration                   | Cleared on session end          |
 | Scope             | Shared across tabs/windows      | Unique to each tab/window       |
 | Storage Limit     | 5-10 MB                        | ~5 MB                           |
+| Accessibility     | Same origin (domain)            | Same origin (domain)            |
 -------------------------------------------------------------------------------------------
 4. Conclusion:
    - Use local storage for data that needs to persist across sessions.
@@ -1533,6 +1534,12 @@ Deboucing vs Throttling in JavaScript:
      in web applications.
 
 ----------------------------------------------------------------------------------------------
+
+
+========================================================================================================================================================================
+----------------------------------------------------------------------------END OF JAVASCRIPT NOTES--------------------------------------------------------------------
+========================================================================================================================================================================
+
 
 
 
