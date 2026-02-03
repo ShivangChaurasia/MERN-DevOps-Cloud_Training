@@ -1385,12 +1385,154 @@ JSON (JavaScript Object Notation)
    - Data exchange between a server and a web application.
    - Configuration files.
    - Storing data in NoSQL databases.
+
+
 6. Conclusion:
    - JSON is a widely used format for data interchange.
    - It is easy to work with in JavaScript using JSON.stringify() and JSON.parse().
    - Understanding JSON is essential for web development and API interactions.
 ---------------------------------------------------------------------------------------------
 
+Local Storage vs Session Storage in JavaScript:
+1. Local Storage:
+   - Data stored in local storage has no expiration time.
+   - Data persists even after the browser is closed and reopened.
+   - Data is shared across all tabs and windows of the same origin (domain).
+   - Maximum storage limit is around 5-10 MB depending on the browser.
+
+   Example:
+     // Storing data
+     localStorage.setItem("username", "Shivang");
+
+     // Retrieving data
+     const username = localStorage.getItem("username");
+     console.log(username); // Output: Shivang
+
+     // Removing data
+     localStorage.removeItem("username");
+
+     // Clearing all data
+     localStorage.clear();
+
+   Example: Adding Object to Local Storage
+     const user = {
+        name: "Shivang",
+        age: 21
+     };
+     localStorage.setItem("user", JSON.stringify(user));
+
+     const retrievedUser = JSON.parse(localStorage.getItem("user"));
+     console.log(retrievedUser.name); // Output: Shivang
+
+2. Session Storage:
+   - Data stored in session storage is cleared when the page session ends.
+   - Data persists only for the duration of the page session (until the tab or window is closed).
+   - Data is not shared across tabs or windows; each has its own session storage.
+   - Maximum storage limit is around 5 MB depending on the browser.
+   Example:
+     // Storing data
+     sessionStorage.setItem("sessionID", "12345");
+
+     // Retrieving data
+     const sessionID = sessionStorage.getItem("sessionID");
+     console.log(sessionID); // Output: 12345
+
+     // Removing data
+     sessionStorage.removeItem("sessionID");
+
+     // Clearing all data
+     sessionStorage.clear();
+
+3. Key Differences:
+-------------------------------------------------------------------------------------------
+| Aspect            | Local Storage                  | Session Storage                |
+|-------------------|---------------------------------|---------------------------------|
+| Persistence       | No expiration                   | Cleared on session end          |
+| Scope             | Shared across tabs/windows      | Unique to each tab/window       |
+| Storage Limit     | 5-10 MB                        | ~5 MB                           |
+-------------------------------------------------------------------------------------------
+4. Conclusion:
+   - Use local storage for data that needs to persist across sessions.
+   - Use session storage for temporary data that should be cleared when the session ends.
+   - Both provide a simple way to store key-value pairs in the browser.
+
+---------------------------------------------------------------------------------------------
+
+=======================================================================================
+Deboucing vs Throttling in JavaScript:
+=======================================================================================
+1. Debouncing:
+   - Debouncing ensures that a function is only executed
+     after a specified delay has passed since the last time it was invoked.
+   - It is useful for scenarios where you want to limit the rate
+     of function execution, such as handling user input events.
+
+   Example:
+     function debounce(func, delay) {
+        let timeoutId;
+        return function(...args) {
+           clearTimeout(timeoutId);
+           timeoutId = setTimeout(() => {
+              func.apply(this, args);
+           }, delay);
+        };
+     }
+
+     const handleResize = debounce(() => {
+        console.log("Window resized");
+     }, 500);
+
+     window.addEventListener("resize", handleResize);
+
+2. Throttling:
+   - Throttling ensures that a function is only executed
+       at most once in a specified time interval.
+   - It is useful for scenarios where you want to limit the frequency
+     of function execution, such as scrolling events.
+   Example:
+     function throttle(func, limit) {
+         let lastFunc;
+         let lastRan;
+         return function(...args) {
+             if (!lastRan) {
+               func.apply(this, args);
+               lastRan = Date.now();
+             } else {
+               clearTimeout(lastFunc);
+               lastFunc = setTimeout(() => {
+                   if ((Date.now() - lastRan) >= limit) {
+                     func.apply(this, args);
+                     lastRan = Date.now();
+                   }
+               }, limit - (Date.now() - lastRan));
+             }
+         };
+       }
+
+       const handleScroll = throttle(() => {
+         console.log("Window scrolled");
+         }, 500);
+         window.addEventListener("scroll", handleScroll);
+
+
+3. Key Differences:
+-------------------------------------------------------------------------------------------
+| Aspect            | Debouncing                     | Throttling                     |
+|-------------------|---------------------------------|---------------------------------|
+| Execution        | After a delay since last call   | At most once in a time interval  |
+| Use Case         | User input events (e.g., typing)| Scrolling, resizing events       |
+| Purpose          | Limit rapid function calls      | Limit frequency of function calls|
+-------------------------------------------------------------------------------------------
+
+4. Conclusion:
+   - Use debouncing when you want to delay function execution
+     until a certain period of inactivity.
+   - Use throttling when you want to ensure a function is called
+     at regular intervals, regardless of how many times it is triggered.
+   - Both techniques help improve performance and user experience
+     in web applications.
+
+----------------------------------------------------------------------------------------------
 
 
 
