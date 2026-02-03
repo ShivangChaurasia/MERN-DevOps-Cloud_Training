@@ -22,6 +22,30 @@
 // console.log("End");
 
 
+// wac to show setInterval func
+// let i = 0;
+// const id = setInterval(() => {
+//     console.log(i);
+//     i++;
+
+//     if (i > 5) {
+//         clearInterval(id);
+//     }
+// }, 1000);
+
+
+// console.log("Start")
+// setTimeout(()=>{
+//     console.log("setTimeout");
+// },0)
+
+// Promise.resolve().then(()=>{
+//     console.log("Promise")
+// })
+// console.log("End")
+
+
+
 
 
 
