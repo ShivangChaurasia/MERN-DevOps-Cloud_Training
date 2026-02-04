@@ -26,7 +26,8 @@ let element = arr.map((ele)=>{
 })
 root.render(element);
 
-
+     
+   
 
 
 
