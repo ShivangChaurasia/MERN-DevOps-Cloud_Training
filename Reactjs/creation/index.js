@@ -19,12 +19,20 @@ let root = ReactDOM.createRoot(document.getElementById("root"))
 
 
 // Printing Array elements in list format
-let arr = ["apple", "banana", 'Orange', "Shimla Mirch"]
+// let arr = ["apple", "banana", 'Orange', "Shimla Mirch"]
 
-let element = arr.map((ele)=>{
-    return  React.createElement("li",{},ele);
-})
-root.render(element);
+// let element = arr.map((ele)=>{
+//     return  React.createElement("li",{},ele);
+// })
+
+
+// let button = React.createElement("button",{onClick : ()=>{alert("Button CLicked, Alert From React!");}},"Button")
+// root.render(button);
+
+
+let bab = <h1>This is H1 Tag</h1> // Babel Used
+root.render(bab)
+
 
 
 
