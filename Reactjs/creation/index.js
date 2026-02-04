@@ -30,8 +30,19 @@ let root = ReactDOM.createRoot(document.getElementById("root"))
 // root.render(button);
 
 
-let bab = <h1>This is H1 Tag</h1> // Babel Used
-root.render(bab)
+// let bab = <h1>This is H1 Tag</h1> // Babel Used
+// root.render(bab)
+
+function Greet(props){
+    return(
+        <div>
+            <h1>Good Morning!</h1>
+            <h2>This is {props.name}</h2>
+        </div>
+    );
+}
+root.render(<Greet name = "Shivang"></Greet>)
+
 
 
 

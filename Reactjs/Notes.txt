@@ -53,6 +53,65 @@ Table:
 ---------------------------------------------------------------------------------------------------------------------------------
 
 
+Babel:
+Babel is a JavaScript compiler that allows developers to write modern JavaScript code
+(ES6 and beyond) and transpile it into a version of JavaScript that is compatible with older browsers.
+
+Examples of features Babel can transpile:
+1. Arrow Functions
+2. Classes
+3. Template Literals
+4. Destructuring Assignment
+5. Modules (import/export)
+
+Example Code for inseting cdn & using babel:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Babel Example</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const greet = (name) => {
+            console.log(`Hello, ${name}!`);
+        };
+        greet('World');
+
+        //OR
+
+        const root = ReactDOM.createRoot(document.getElementById('app'))
+        let bab = <h1>This is H1 Tag</h1> // Babel Used
+        root.render(bab)'
+
+        //OR
+        function Greet(){
+        return(
+                <div>
+                    <h1>Good Morning!</h1>
+                </div>
+            );
+        }
+root.render(<Greet></Greet>)
+
+    </script>
+</body>
+</html>
+
+
+Example of Transpilation:
+// ES6+ code
+const greet = (name) => {
+    console.log(`Hello, ${name}!`);
+};
+// Transpiled ES5 code
+var greet = function(name) {
+    console.log('Hello, ' + name + '!');
+};
+
+
+
 Components:
 Components are the building blocks of a React application. They are reusable, self-contained pieces of code that define how a certain part of the UI should appear and behave.
 Components can be functional or class-based, with functional components being the more modern and preferred approach in recent React development.
@@ -60,6 +119,7 @@ Components can be functional or class-based, with functional components being th
 JSX (JavaScript XML):
 JSX is a syntax extension for JavaScript that looks similar to HTML. It allows developers to write HTML-like code within JavaScript, making it easier to create and visualize the structure of the UI.
 JSX is transpiled to regular JavaScript by tools like Babel before being executed in the browser
+
 
 
 
