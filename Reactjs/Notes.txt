@@ -53,7 +53,7 @@ Table:
 ---------------------------------------------------------------------------------------------------------------------------------
 
 
-Babel:
+Babel:-------------------------------------------------------------------
 Babel is a JavaScript compiler that allows developers to write modern JavaScript code
 (ES6 and beyond) and transpile it into a version of JavaScript that is compatible with older browsers.
 
@@ -111,14 +111,45 @@ var greet = function(name) {
 };
 
 
-
+---------------------------------------------------------------------
 Components:
 Components are the building blocks of a React application. They are reusable, self-contained pieces of code that define how a certain part of the UI should appear and behave.
 Components can be functional or class-based, with functional components being the more modern and preferred approach in recent React development.
 
+---------------------------------------------------------------------
 JSX (JavaScript XML):
 JSX is a syntax extension for JavaScript that looks similar to HTML. It allows developers to write HTML-like code within JavaScript, making it easier to create and visualize the structure of the UI.
 JSX is transpiled to regular JavaScript by tools like Babel before being executed in the browser
+
+---------------------------------------------------------------------
+Props:
+Props (short for "properties") are a way to pass data from a parent component to a child component in React. They are read-only and allow components to be reusable and dynamic.
+Example of using props:
+function Greeting(props) {
+    return <h1>Hello, {props.name}!</h1>;
+}
+In this example, the Greeting component takes a prop called "name" and uses it to display a personalized greeting message. When rendering the Greeting component, you can pass a value for the "name" prop like this:
+<Greeting name="Alice" />
+
+
+-------------------------------------------------
+State:
+State is a built-in object in React that allows components to manage and update their own data. Unlike props, state is mutable and can be changed over time, typically in response to user actions or other events.
+Example of using state in a functional component with the useState hook:
+import React, { useState } from 'react';
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>
+                Click me
+            </button>
+        </div>
+    );
+}
+
 
 
 
