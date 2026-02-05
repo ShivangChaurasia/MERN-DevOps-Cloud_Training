@@ -197,6 +197,38 @@ function Timer() {
 }
 ------------------------------------------------------------------------------------------
 
+Forms in React:
+In React, forms are typically handled using controlled components, where the form data is managed by the
+component's state. This allows for more control over the form inputs and makes it easier to handle user input and form submission.
+Example of a controlled form component:
+import React, { useState } from 'react';
+function MyForm() {
+    const [name, setName] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(`Submitted name: ${name}`);
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>
+                Name:
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    );
+}
+In this example, the input field is a controlled component because its value is controlled by the React state (the "name" variable). The onChange event updates the state whenever the user types in the input field, and the handleSubmit function is called when the form is submitted, preventing the default form submission behavior and displaying an alert with the submitted name.
+----------------------------------------------------------------------------------------------------------------
+
+
+Task: //Create Form in React--------------------
 
 
 
