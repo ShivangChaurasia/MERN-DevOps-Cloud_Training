@@ -122,7 +122,7 @@ JSX (JavaScript XML):
 JSX is a syntax extension for JavaScript that looks similar to HTML. It allows developers to write HTML-like code within JavaScript, making it easier to create and visualize the structure of the UI.
 JSX is transpiled to regular JavaScript by tools like Babel before being executed in the browser
 
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 Props:
 Props (short for "properties") are a way to pass data from a parent component to a child component in React. They are read-only and allow components to be reusable and dynamic.
 Example of using props:
@@ -132,7 +132,7 @@ function Greeting(props) {
 In this example, the Greeting component takes a prop called "name" and uses it to display a personalized greeting message. When rendering the Greeting component, you can pass a value for the "name" prop like this:
 <Greeting name="Alice" />
 
----------------------------------------------------
+----------------------------------------------------------------------------------------
 Hooks in React:
 Hooks are functions that allow you to use state and other React features in functional components. They were introduced in React 16.8 to enable developers to manage state and side effects without needing to write class components.
 Some commonly used hooks include:
@@ -140,7 +140,7 @@ Some commonly used hooks include:
 2. useEffect: Allows you to perform side effects in functional components, such as fetching data or subscribing to events.
 3. useContext: Allows you to access the context API in functional components.
 4. useRef: Allows you to create a mutable reference that persists across renders.
--------------------------------------------------
+----------------------------------------------------------------------------------------
 State:
 State is a built-in object in React that allows components to manage and update their own data. Unlike props, state is mutable and can be changed over time, typically in response to user actions or other events.
 Example of using state in a functional component with the useState hook:
@@ -158,7 +158,7 @@ function Counter() {
     );
 }
 
-------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
 useEffect:
 The useEffect hook is a function in React that allows you to perform side effects in functional components
@@ -195,7 +195,7 @@ function Timer() {
 
     return <div>Seconds: {seconds}</div>;
 }
-----------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 
 
