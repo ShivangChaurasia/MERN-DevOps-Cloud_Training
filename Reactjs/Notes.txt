@@ -110,13 +110,14 @@ var greet = function(name) {
     console.log('Hello, ' + name + '!');
 };
 
-
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+Concepts of React:
+----------------------------------------------------------------------------------------
 Components:
 Components are the building blocks of a React application. They are reusable, self-contained pieces of code that define how a certain part of the UI should appear and behave.
 Components can be functional or class-based, with functional components being the more modern and preferred approach in recent React development.
 
----------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 JSX (JavaScript XML):
 JSX is a syntax extension for JavaScript that looks similar to HTML. It allows developers to write HTML-like code within JavaScript, making it easier to create and visualize the structure of the UI.
 JSX is transpiled to regular JavaScript by tools like Babel before being executed in the browser
@@ -131,7 +132,14 @@ function Greeting(props) {
 In this example, the Greeting component takes a prop called "name" and uses it to display a personalized greeting message. When rendering the Greeting component, you can pass a value for the "name" prop like this:
 <Greeting name="Alice" />
 
-
+---------------------------------------------------
+Hooks in React:
+Hooks are functions that allow you to use state and other React features in functional components. They were introduced in React 16.8 to enable developers to manage state and side effects without needing to write class components.
+Some commonly used hooks include:
+1. useState: Allows you to add state to functional components.
+2. useEffect: Allows you to perform side effects in functional components, such as fetching data or subscribing to events.
+3. useContext: Allows you to access the context API in functional components.
+4. useRef: Allows you to create a mutable reference that persists across renders.
 -------------------------------------------------
 State:
 State is a built-in object in React that allows components to manage and update their own data. Unlike props, state is mutable and can be changed over time, typically in response to user actions or other events.
@@ -149,6 +157,45 @@ function Counter() {
         </div>
     );
 }
+
+------------------------------------------------------------------
+
+useEffect:
+The useEffect hook is a function in React that allows you to perform side effects in functional components
+. It serves a similar purpose to lifecycle methods in class components, such as componentDidMount, componentDidUpdate, and componentWillUnmount.
+Example of using useEffect to fetch data from an API when a component mounts:
+import React, { useState, useEffect } from 'react';
+function DataFetcher() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        fetch('https://api.example.com/data')
+            .then(response => response.json())
+            .then(data => setData(data));
+    }, []); // Empty dependency array means this effect runs once on mount
+
+    return (
+        <div>
+            {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Loading...'}
+        </div>
+    );
+}
+
+Example of using useState and useEffect together:
+import React, { useState, useEffect } from 'react';
+function Timer() {
+    const [seconds, setSeconds] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSeconds(prevSeconds => prevSeconds + 1);
+        }, 1000);
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, []); // Empty dependency array means this effect runs once on mount
+
+    return <div>Seconds: {seconds}</div>;
+}
+----------------------------------------------------------------------------------------
 
 
 
