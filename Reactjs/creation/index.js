@@ -383,34 +383,77 @@
 // Profile
 // ============================================================================================================
 
-function Profile({name, age,city}){
-    const [userage,setAge] = React.useState(age);
-    const [message, setMessage] = React.useState("")
+// function Profile(){
+//     const [obj,setObj] = React.useState(
+//         {
+//             name : "Shivang",
+//             age: 21,
+//             city: "Jalandhar"
+//         }
 
-    React.useEffect(()=>{
-        setMessage(`Age is Updated ${userage}`)
-    },[userage])
+//     );
 
-    let handleInc = ()=>{
-        setAge(prev => prev+1);
-    }
-    return(
-        <>
-            <section>
-                <h1 className="font-bold text-2xl">This is Profile</h1>
-                <h3>Name: {name}</h3>
-                <h3>Age: {age}</h3>
-                <h3>City: {city}</h3>
-                <button className="border-2 p-2" onClick={handleInc}>Click to Increase Age</button>
-                <p className="text-green-600 mt-2">{message}</p>
-            </section>
-        </>
-    )
-}
+//     let handleInc = ()=>{
+//         setObj(prev => ({
+//             ...prev,
+//             age: prev.age +1
+//         }))
+    
+//     }
 
-let root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Profile name={"Shivang"} age={21} city={"Jalandhar"}></Profile>)
 
+//     return(
+//         <>
+//             <section>
+//                 <h1 className="font-bold text-2xl">This is Profile</h1>
+//                 <h3>Name: {obj.name}</h3>
+//                 <h3>Age: {obj.age}</h3>
+//                 <h3>City: {obj.city}</h3>
+//                 <button className="border-2 p-2" onClick={handleInc}>Click to Increase Age</button>
+//             </section>
+//         </>
+//     )
+// }
+
+// let root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<Profile name={"Shivang"} age={21} city={"Jalandhar"}></Profile>)
+
+
+// ===============================================================================================================
+
+
+
+
+// ===============================================================================================================
+// Counter Using Batch Function-----------------------------------------
+// ===============================================================================================================
+// function CounterApp() {
+//   const [count, setCount] = React.useState(0);
+
+//   const batchIncrement = () => {
+
+//     setCount(prev => prev + 1);
+//     setCount(prev => prev + 1);
+//     setCount(prev => prev + 1);
+//   };
+
+//   return (
+//     <div style={{ textAlign: "center", marginTop: "50px" }} className=" space-x-6">
+//       <h1>Counter App</h1>
+//       <h2>Count: {count}</h2>
+
+//       <button className="border-2 p-2" onClick={() => setCount(count + 1)}>Increment</button>
+//       <button className="border-2 p-2" onClick={() => setCount(count - 1)}>Decrement</button>
+//       <button className="border-2 p-2" onClick={() => setCount(0)}>Reset</button>
+//       <button className="border-2 p-2" onClick={batchIncrement}>Batch Increment (+3)</button>
+//     </div>
+//   );
+// }
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<CounterApp />);
+
+// -----------------------------------------------------------------------------------------------------------------
 
 
 
