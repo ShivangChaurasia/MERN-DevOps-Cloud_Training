@@ -500,36 +500,106 @@
 
 // -----------------------------------------------------------------------------------
 
-function Data(){
-const [data, setData] = React.useState([]);
+// function Data(){
+// const [data, setData] = React.useState([]);
 
-    let handleFetch = ()=>{
-        async function fetchData() {
-            let res = await fetch("https://jsonplaceholder.typicode.com/users/");
+//     let handleFetch = ()=>{
+//         async function fetchData() {
+//             let res = await fetch("https://jsonplaceholder.typicode.com/users/");
+//             let result = await res.json();
+//             setData(result);
+//             console.log(result);
+//         }
+//         fetchData();
+//     }
+
+
+//     return(
+//         <>
+//             <h1 className="font-bold text-2xl">This is List of Data</h1>
+//             <button className="border-1" onClick={handleFetch}>Click to Fetch</button>
+//             <ul>
+//                 {data.map((ele)=>(
+//                     <li key ={ele.id}>{ele.name}</li>
+//                 ))}
+//             </ul>
+//         </>
+//     )
+// }
+
+// let root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(<Data></Data>)
+
+
+
+// ---------------------------------------------------------------------------------
+// let obj = {
+//     name : "Shivang",
+//     role : "developer",
+//     city : "Jalandhar"
+// }
+
+// let data = Object.entries(obj);
+// console.log(data[0]);
+
+// let value = Object.values(obj);
+// console.log(value);
+
+// let keys = Object.keys(obj);
+// console.log(keys);
+
+
+// ---------------------------------------------------------------------------
+
+function API(){
+    const [data,setData] = React.useState([]);
+    const [movie, setMovie] = React.useState([]);
+    
+    async function fetchMovie() {
+        try{
+            let res = await fetch("https://mern-project-4a3fc-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json");
             let result = await res.json();
             setData(result);
-            console.log(result);
+        }catch(error){
+            error;
         }
-        fetchData();
+    }
+
+    async function AddData(){
+        try{
+            let res = await fetch(
+                "https://mern-project-4a3fc-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json",
+                {
+                    method : "POST",
+                    body : JSON.stringify()
+                }
+            );
+            let result = await res.json();
+            setMovie(result);
+
+        }catch(error){
+            error;
+        }
+
+    }
+
+    let handleFetch = ()=>{
+        fetchMovie();
+    }
+    let handleAdd = ()=>{
+        AddData();
     }
 
 
     return(
         <>
-            <h1 className="font-bold text-2xl">This is List of Data</h1>
-            <button className="border-1" onClick={handleFetch}>Click to Fetch</button>
-            <ul>
-                {data.map((ele)=>(
-                    <li key ={ele.id}>{ele.name}</li>
-                ))}
-            </ul>
+            <h1>Fetching Data from API</h1>\
+            <input type="text" value={movie}></input>
+            <button onClick={handleAdd}>Add Movie</button>
+            <button onClick={handleFetch}>Fetch Data</button>
         </>
     )
 }
-
-let root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<Data></Data>)
-
 
 
 
