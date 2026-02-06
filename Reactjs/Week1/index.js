@@ -457,13 +457,46 @@
 
 
 
+function List(){
+    const [user, setUser] = React.useState([
+        {
+            id : 101,
+            Name: "Shivang",
+            last: "Chaurasia",
+            city : "Jalandhar",
+            image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvqxmS65qOTq0jj1-uHcCRWtTo0XPeQCmF3W7HDE5HG8zSdfulrthBA6C8o3YzaYYntem4Nk2wi3ceZO_dBS3LBqRY-YcPPFrSDakVAF1y_A&s=10"
+        },
+        {
+            id : 102,
+            Name: "Sourav",
+            last: "Sharma",
+            city : "Jalandhar",
+            image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYx3ro-_9V-GRw2H8xrwigyfqpIJiIc4ln401Fv8iTfjXr7qFkmTTq7UYURB_rzMEYqhJJOwx8HlKDE1vBeXjcoWiQcP4b1EwTkXIcQzg1&s=10"
+        },
+        {
+            id : 103,
+            Name: "AB",
+            last: "Devilliers",
+            city : "Jalandhar",
+            image : "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS8tlczEaxIYKRshxonRdM-eItISTFdyY-K5IanOLaq6uuvTQdeH3zfGgyG9s2YPSn5Zou8usqAAbCzmB-5gdMZa2FSi17OEjBRP0enGLiqatr1XcULJ7YNrjFX4H0xS2NF7Zu523JAfxM&s=19"
+        },
+    ])
 
 
+    return(
+        <>
+        <h1 className="font-semibold text-3xl">This is List of Users:</h1>
+        <div className="ml-2 mt-2 text-xl">
+            <ul className="item-center flex space-x-6">
+                {user.map(ele=>(<li key={ele.id}><img width="180px" height="180px" src={ele.image}></img> {ele.Name} {ele.last}</li>))}
+            </ul>
+        </div>
+        </>
+    )
+}
 
-
-
-
-
+let root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<List></List>)
 
 
 
