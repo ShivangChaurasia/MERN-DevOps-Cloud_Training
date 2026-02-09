@@ -228,7 +228,17 @@ In this example, the input field is a controlled component because its value is 
 ----------------------------------------------------------------------------------------------------------------
 
 
-Task: //Create Form in React--------------------
+Task: //Create Form in React-------------------- use local storage of browser
+-------------------------------------------------------------------------
+
+
+=============================================
+Fetch Method in React using fetch():
+=============================================
+
+
+
+
 
 
 
