@@ -233,14 +233,197 @@ Task: //Create Form in React-------------------- use local storage of browser
 
 
 =============================================
-Fetch Method in React using fetch():
+Fetch Method in React using fetch() without useEffect:
 =============================================
 
+The fetch() method is a built-in JavaScript function that allows you to make network requests to retrieve resources from a server. In React, you can use the fetch() 
+method to fetch data from an API and update your component's state with the retrieved data.
+Example of using fetch() in a React component:
+import React, { useState } from 'react';
+function DataFetcher() {
+    const [data, setData] = useState(null);
+
+    const fetchData = () => {
+        fetch('https://api.example.com/data')
+            .then(response => response.json())
+            .then(data => setData(data))
+            .catch(error => console.error('Error fetching data:', error));
+    };
+
+    return (
+        <div>
+            <button onClick={fetchData}>Fetch Data</button>
+            {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+        </div>
+    );
+}
+
+In this example, the fetchData function is called when the "Fetch Data" button is clicked. It uses the fetch() method to make a GET request to the specified API endpoint.
+The response is then converted to JSON and stored in the component's state using setData. If there is an error during the fetch operation, it is caught and logged to the console.
+The retrieved data is displayed in a formatted manner using JSON.stringify when it is available.
 
 
+==========================
+Adding Data---------
+==========================
+import React, { useState } from 'react';
+function AddData() {
+    const [name, setName] = useState('');
+    const [age, setAge] = useState('');
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const newData = { name, age };
+        // Here you can send newData to an API or update your state
+        console.log('New Data:', newData);
+    };
 
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>
+                Name:
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </label>
+            <br />
+            <label>
+                Age:
+                <input
+                    type="number"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                />
+            </label>
+            <br />
+            <button type="submit">Add Data</button>
+        </form>
+    );
+}
 
+In this example, we have a form with two input fields for "name" and "age". The handleSubmit function is called when the form is submitted,
+preventing the default form submission behavior.
+It creates a new data object with the values from the input fields and logs it to the console.
+You can modify the handleSubmit function to send this data to an API or update your component's state as needed.
+----------------------------------------------------------------------------------------------------------------------------------
+
+=======================================================================
+Axios in React:
+=======================================================================
+
+Axios is a popular JavaScript library used for making HTTP requests from the browser. It provides a simple and intuitive API for sending asynchronous requests to a server and handling responses.
+Example of using Axios in a React component:
+import React, { useState } from 'react';
+import axios from 'axios';
+function DataFetcher() {
+    const [data, setData] = useState(null);
+
+    const fetchData = () => {
+        axios.get('https://api.example.com/data')
+            .then(response => setData(response.data))
+            .catch(error => console.error('Error fetching data:', error));
+    };
+
+    return (
+        <div>
+            <button onClick={fetchData}>Fetch Data</button>
+            {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+        </div>
+    );
+}
+In this example, we import the Axios library and use it to make a GET request to the specified API endpoint when the "Fetch Data" button is clicked.
+The response data is stored in the component's state using setData, and any errors during the request are caught and logged to the console. The retrieved data is displayed in a formatted manner using JSON.stringify when it is available.
+
+Example of using Axios to send a POST request:
+import React, { useState } from 'react';
+import axios from 'axios';
+function AddData() {
+    const [name, setName] = useState('');
+    const [age, setAge] = useState('');
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const newData = { name, age };
+        axios.post('https://api.example.com/data', newData)
+            .then(response => console.log('Data added:', response.data))
+            .catch(error => console.error('Error adding data:', error));
+    };
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label>
+                Name:
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+            </label>
+            <br />
+            <label>
+                Age:
+                <input
+                    type="number"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                />
+            </label>
+            <br />
+            <button type="submit">Add Data</button>
+        </form>
+    );
+}
+
+In this example, we use Axios to send a POST request to the specified API endpoint with the new data object when the form is submitted.
+The response from the server is logged to the console, and any errors during the request are also caught and logged.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+=====================================================================
+Lifecycle Methods in React:
+=====================================================================
+
+Lifecycle methods are special methods in React class components that allow you to hook into different stages of a component's lifecycle, such as when
+it is mounted, updated, or unmounted. These methods provide a way to perform side effects, manage state, and interact with the DOM at specific points in the component's lifecycle.
+
+Some commonly used lifecycle methods include:
+1. componentDidMount: Called immediately after a component is mounted (inserted into the tree).
+    You can use this method to perform initialization tasks, such as fetching data from an API or setting up event listeners.
+
+2. componentDidUpdate: Called immediately after updating occurs. This method is not called for the initial render.
+    You can use this method to perform operations after the component has been updated, such as updating the DOM or making additional API calls based on changes in props or state.
+
+3. componentWillUnmount: Called immediately before a component is unmounted and destroyed.
+    You can use this method to perform cleanup tasks, such as removing event listeners or canceling network requests.
+
+    Example of using lifecycle methods in a React class component:
+    import React, { Component } from 'react';
+    class MyComponent extends Component {
+        componentDidMount() {
+            console.log('Component has mounted');
+            // Perform initialization tasks here
+        }
+
+        componentDidUpdate(prevProps, prevState) {
+            console.log('Component has updated');
+            // Perform operations after the component has been updated
+        }
+
+        componentWillUnmount() {
+            console.log('Component will unmount');
+            // Perform cleanup tasks here
+        }
+
+        render() {
+            return <div>Hello, World!</div>;
+        }
+    }
+
+In this example, we define a class component called MyComponent that implements the three lifecycle methods: componentDidMount, componentDidUpdate, and componentWillUnmount.
+
+---------------------------------------------------------------------------------------------------
 
 
 
