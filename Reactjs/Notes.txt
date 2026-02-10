@@ -382,7 +382,7 @@ The response from the server is logged to the console, and any errors during the
 -----------------------------------------------------------------------------------------------------------------------------------
 
 =====================================================================
-Lifecycle Methods in React:
+Lifecycle Methods in React: It is of three types.
 =====================================================================
 
 Lifecycle methods are special methods in React class components that allow you to hook into different stages of a component's lifecycle, such as when
@@ -425,6 +425,129 @@ In this example, we define a class component called MyComponent that implements 
 
 ---------------------------------------------------------------------------------------------------
 
+======================================
+Side Effects in React:
+======================================
+
+In React, side effects refer to any operations that can affect the state of the application or interact with external systems, such as fetching data from an API, manipulating the DOM, or setting up event listeners.
+React provides the useEffect hook to handle side effects in functional components. The useEffect hook allows
+you to perform side effects in a way that is consistent with the component's lifecycle, ensuring that effects are properly cleaned up when the component unmounts or when dependencies change.
+Example of using useEffect to perform a side effect:
+import React, { useState, useEffect } from 'react';
+function DataFetcher() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        fetch('https://api.example.com/data')
+            .then(response => response.json())
+            .then(data => setData(data))
+            .catch(error => console.error('Error fetching data:', error));
+    }, []); // Empty dependency array means this effect runs once on mount
+
+    return (
+        <div>
+            {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Loading...'}
+        </div>
+    );
+}
+
+Ex:- 
+    1. Fetching data from an API when a component mounts, setting up a timer that updates the state every second, or adding event listeners to handle user interactions are all examples of side effects in React. 
+    The useEffect hook allows you to manage these side effects in a way that is consistent with the component's lifecycle, ensuring that they are properly cleaned up when necessary.
+
+    2. Updating the browser's document title based on the component's state is another common example of a side effect in React. You can use the useEffect hook to achieve this as follows:
+        import React, { useState, useEffect } from 'react';
+        function DocumentTitleUpdater() {
+            const [count, setCount] = useState(0);
+
+            useEffect(() => {
+                document.title = `Count: ${count}`;
+            }, [count]); // This effect runs whenever the 'count' state changes
+
+            return (
+                <div>
+                    <p>Count: {count}</p>
+                    <button onClick={() => setCount(count + 1)}>Increment</button>
+                </div>
+            );
+        }
+
+    3. Setting timeouts or intervals to perform actions after a certain period of time is also a common side effect in React. You can use the useEffect hook to manage these timers and ensure they are cleaned up properly:
+        import React, { useState, useEffect } from 'react';
+        function Timer() {
+            const [seconds, setSeconds] = useState(0);
+
+            useEffect(() => {
+                const interval = setInterval(() => {
+                    setSeconds(prevSeconds => prevSeconds + 1);
+                }, 1000);
+                return () => clearInterval(interval); // Cleanup on unmount
+            }, []); // Empty dependency array means this effect runs once on mount
+
+            return <div>Seconds: {seconds}</div>;
+        }
+
+    4. Adding event listeners to handle user interactions, such as scrolling or resizing the window, is another example of a side effect in React. You can use the useEffect hook to manage these event listeners and ensure they are cleaned up when the component unmounts:
+        import React, { useState, useEffect } from 'react';
+        function WindowSize() {
+            const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+            useEffect(() => {
+                const handleResize = () => setWindowWidth(window.innerWidth);
+                window.addEventListener('resize', handleResize);
+                return () => window.removeEventListener('resize', handleResize); // Cleanup on unmount
+            }, []); // Empty dependency array means this effect runs once on mount
+
+            return <div>Window width: {windowWidth}px</div>;
+        }
+
+    5. Manipulating the DOM directly, such as focusing an input field when a component mounts, is also considered a side effect in React. You can use the useEffect hook to perform this action:
+        import React, { useRef, useEffect } from 'react';
+        function FocusInput() {
+            const inputRef = useRef(null);
+
+            useEffect(() => {
+                inputRef.current.focus(); // Focus the input field when the component mounts
+            }, []); // Empty dependency array means this effect runs once on mount
+
+            return <input ref={inputRef} type="text" placeholder="Focus me!" />;
+        }
+
+    6. Interacting with external systems, such as sending analytics data or integrating with third-party libraries, is also a common example of a side effect in React.
+    You can use the useEffect hook to manage these interactions and ensure they are performed at the appropriate times in the component's lifecycle.
+        import React, { useEffect } from 'react';
+        function AnalyticsTracker() {
+            useEffect(() => {
+                // Send analytics data when the component mounts
+                sendAnalyticsData('Component Mounted');
+                return () => {
+                    // Send analytics data when the component unmounts
+                    sendAnalyticsData('Component Unmounted');
+                };
+            }, []); // Empty dependency array means this effect runs once on mount
+
+            return <div>Tracking analytics...</div>;
+        }
+
+        function sendAnalyticsData(message) {
+            console.log(`Analytics: ${message}`);
+            // Here you would typically send this data to an analytics service
+        }
+
+
+    7. Performing cleanup tasks, such as canceling network requests or removing event listeners when a component unmounts, is also an important aspect of managing side effects in React. The useEffect hook allows you to return a cleanup function that will be called when the component unmounts or when dependencies change:
+        import React, { useEffect } from 'react';
+        function CleanupExample() {
+            useEffect(() => {
+                const handleScroll = () => console.log('Scrolled!');
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll); // Cleanup on unmount
+            }, []); // Empty dependency array means this effect runs once on mount
+
+            return <div>Scroll the window to see the effect!</div>;
+        }
+
+--------------------------------------------------------------------------------------------------
 
 
 
