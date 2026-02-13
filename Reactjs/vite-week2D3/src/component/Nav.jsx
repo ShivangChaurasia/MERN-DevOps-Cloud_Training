@@ -11,10 +11,26 @@ export default function Nav() {
             <a href='/contact'>Contact</a> */}
 
             {/* Where as Link Tag helps us to travel across pages without refreshing */}
-            <Link to='/'>Home</Link> {" | "}
+
+            <Link to='/home'>Home</Link> {" | "}
             <Link to='/about'>About</Link>{" | "}
             <Link to='/contact'>Contact</Link>
         </div>
     </>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
