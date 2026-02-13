@@ -6,6 +6,8 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import Unknown from './pages/Unknown'
 import LandingPage from './pages/LandingPage'
+import Products from './pages/Products'
+import ProductDetails from './component/ProductDetails'
 
 function App() {
 
@@ -19,6 +21,9 @@ function App() {
         <Route path="/Home" element={<Home/>}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
+        <Route path="/product" element={<Products/>}></Route>
+        <Route path="/productdetail/:value" element={<ProductDetails />} />
+
       </Routes>
 
     </>

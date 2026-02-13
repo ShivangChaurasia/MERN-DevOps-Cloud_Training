@@ -7,14 +7,15 @@ export default function Nav() {
         <div>
             {/* If we use Anchor tag, before going to every other page it gets refreshed. */}
             {/* <a href='/'>Home</a> {" | "}
-            <a href='/about'>About</a>{" | "} 
+            <a href='/about'>About</a>{" | "}
             <a href='/contact'>Contact</a> */}
 
             {/* Where as Link Tag helps us to travel across pages without refreshing */}
 
-            <Link to='/home'>Home</Link> {" | "}
-            <Link to='/about'>About</Link>{" | "}
-            <Link to='/contact'>Contact</Link>
+            <Link to='/home'>Home</Link> {"     |     "}
+            <Link to='/about'>About</Link>{"    |    "}
+            <Link to='/contact'>Contact</Link>{"     |     "}
+            <Link to='/product'>Product</Link>
         </div>
     </>
   )
