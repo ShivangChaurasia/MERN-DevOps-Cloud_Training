@@ -549,7 +549,12 @@ Ex:-
 
 --------------------------------------------------------------------------------------------------
 
+==============================================================================================================================
+Context API in React:
+==============================================================================================================================
 
+The Context API in React is a way to manage and share state across a component tree without having to pass props down manually at every level.
+It provides a way to create global state that can be accessed by any component in the tree, regardless of how deeply nested it is.
 
 
 
