@@ -33,3 +33,205 @@ What is Server?
     and responds with the appropriate content, such as HTML pages, images, or data in JSON format.
 - Servers can be physical machines or virtual instances running in the cloud, and they often run server-side software to handle requests and manage
     resources efficiently.
+
+    Exaple with Node.js:
+    - In a Node.js application, the server is created using the built-in 'http' module or frameworks like Express.js.
+        The server listens for incoming requests on a specified port and responds with the appropriate data or content.
+
+
+---------------------------------------------------------------
+
+What is Client?
+
+- A client is a computer or software application that accesses services or resources provided by a server over a network.
+- In the context of web development, a client typically refers to a web browser or any application
+    that sends requests to a web server and receives responses, such as HTML pages, images, or data in JSON format.
+- Clients can be used to access various types of services, including websites, APIs, databases, and more.
+- The client initiates communication with the server by sending requests, and the server processes those requests and returns the appropriate responses.
+
+    Example with Node.js:
+    - In a Node.js application, the client can be a web browser that sends HTTP requests to the server created using Node.js.
+        The server processes these requests and responds with the requested content, such as HTML pages or JSON data.
+
+
+---------------------------------------------------------------
+
+3-layer Architecture:
+- The 3-layer architecture, also known as the three-tier architecture, is a software design pattern that separates an application into three
+    distinct layers:
+    1. the presentation layer
+    2. the business logic/Application layer
+    3. the data access layer.
+- The presentation layer is responsible for handling the user interface and user interactions. It is the layer that users
+    interact with directly.
+- The business logic layer contains the core functionality and logic of the application. It processes data,
+    performs calculations, and implements the rules of the application.
+- The data access layer is responsible for managing the interaction with the database or any other data storage.
+    It handles data retrieval, storage, and manipulation.
+
+    Example with Node.js:
+    - In a Node.js application, the presentation layer could be implemented using a frontend framework like
+    React or Angular, while the business logic layer could be implemented using Node.js and Express.js to handle the server-side logic.
+    The data access layer could be implemented using a database like MongoDB or MySQL, with Node.js handling the database interactions
+    through an ORM (Object-Relational Mapping) or direct database queries.
+
+
+------------------------------------------------------------------------
+
+The Client-Server Model:
+- The client-server model is a distributed application architecture that divides tasks between clients and servers.
+- In this model, clients are responsible for initiating requests and consuming services, while servers are responsible for processing requests and providing
+    responses.
+- The client-server model allows for a clear separation of concerns, where clients focus on the user interface and user experience,
+    while servers handle the business logic and data management.
+- This model is widely used in web development, where web browsers (clients) interact with web servers to access websites and services.
+
+    Example with Node.js:
+    - In a Node.js application, the client could be a web browser that sends HTTP requests to a Node.js server. The server processes these requests,
+        performs the necessary business logic, and responds with the appropriate content, such as HTML pages or JSON data. This interaction follows the client-server model,
+        where the client initiates communication and the server responds accordingly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
