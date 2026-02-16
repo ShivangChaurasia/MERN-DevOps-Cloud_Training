@@ -25,7 +25,7 @@ export default function Products() {
     if(!loading){
         return <h1>Loading...</h1>
     }
-    
+
   return (
     <section style={{display: "grid", gridTemplateColumns:"repeat(3,1fr)", marginTop : "60px", gap:"10px"}}>
         {data.map((ele)=>(
@@ -39,4 +39,3 @@ export default function Products() {
     </section>
   )
 }
-  
