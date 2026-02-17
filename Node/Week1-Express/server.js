@@ -1,15 +1,43 @@
 const express = require('express');
+const fs = require('fs');
 
 const app = express();
+app.use(express.json())
 
+let user = [];
 
-app.get("/",(req,res)=>{
-    res.write("This is res.write, says, Hello Sir!!   .");
-    res.end("\n  This is GET Method")
+app.get("/user",(req,res)=>{
+    // res.write("This is res.write, says, Hello Sir!!   .");
+    
+    fs.readFile("detail.txt","utf-8",(err,data)=>{
+        if(err){
+            console.log("Error Fetching Data!!");
+        }else{
+
+            res.json(data);
+            console.log("Data Displayed!!")
+        }
+    })
 })
 
-app.post("/",(req,res)=>{
-    res.end(" \n This is POST Method")
+app.post("/user",(req,res)=>{
+    try{
+        const {name, age} = req.body;
+        user.push({name, age});
+        console.log(name);
+        console.log(age);
+
+        fs.appendFile("detail.txt", JSON.stringify({name, age}), (err,req,res)=>{
+            if(err){
+                console.log("Something went wrong!")
+            }else{
+                console.log("Data Added Successfully!")
+            }
+        })
+        res.send("Data Stored successfully!!");
+    }catch(e){
+        console.log(e);
+    }
 })
 
 
