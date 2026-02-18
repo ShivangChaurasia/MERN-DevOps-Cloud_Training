@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Sourav",
+    "Age": 21
+  },
+  {
+    "Name": "Shivang",
+    "Age": 21
+  },
+  {
+    "cart": {
+      "itemName": "Apple"
+    }
+  }
+]
