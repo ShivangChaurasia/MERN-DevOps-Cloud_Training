@@ -1,0 +1,239 @@
+MongoDB Operations — Complete Notes
+
+--------------------------------------------------
+1. Database Operations
+--------------------------------------------------
+
+Show all databases
+show dbs
+
+Create / switch database
+use companyDB
+Note: If the database does not exist, MongoDB creates it on the first insert.
+
+Check current database
+db
+
+Drop database
+db.dropDatabase()
+
+
+--------------------------------------------------
+2. Collection Operations
+--------------------------------------------------
+
+Show collections
+show collections
+
+Create collection
+db.createCollection("users")
+
+Drop collection
+db.users.drop()
+
+
+--------------------------------------------------
+3. Insert Operations
+--------------------------------------------------
+
+Insert one document
+db.users.insertOne({
+  name: "Sourav",
+  age: 22,
+  city: "Bokaro",
+  role: "SDE"
+})
+
+Insert multiple documents
+db.users.insertMany([
+  { name: "Aman", age: 24, city: "Delhi", role: "Frontend Developer" },
+  { name: "Riya", age: 23, city: "Mumbai", role: "Backend Developer" }
+])
+
+
+--------------------------------------------------
+4. Read / Find Operations
+--------------------------------------------------
+
+Find all documents
+db.users.find()
+
+Pretty format
+db.users.find().pretty()
+
+Find one document
+db.users.findOne({ name: "Sourav" })
+
+Query with conditions
+
+Equal
+db.users.find({ city: "Delhi" })
+
+Greater than
+db.users.find({ age: { $gt: 24 } })
+
+Less than
+db.users.find({ age: { $lt: 25 } })
+
+Greater than or equal
+db.users.find({ age: { $gte: 25 } })
+
+Not equal
+db.users.find({ age: { $ne: 22 } })
+
+
+--------------------------------------------------
+5. Logical Operators
+--------------------------------------------------
+
+AND (implicit)
+db.users.find({ age: 24, city: "Delhi" })
+
+OR
+db.users.find({
+  $or: [
+    { city: "Delhi" },
+    { city: "Mumbai" }
+  ]
+})
+
+NOT
+db.users.find({ age: { $not: { $gt: 25 } } })
+
+
+--------------------------------------------------
+6. Projection (Select Fields)
+--------------------------------------------------
+
+Include fields
+db.users.find({}, { name: 1, city: 1 })
+
+Exclude fields
+db.users.find({}, { age: 0 })
+
+
+--------------------------------------------------
+7. Update Operations
+--------------------------------------------------
+
+Update one
+db.users.updateOne(
+  { name: "Sourav" },
+  { $set: { city: "Ranchi" } }
+)
+
+Update many
+db.users.updateMany(
+  { role: "SDE" },
+  { $set: { role: "Software Engineer" } }
+)
+
+Increment value
+db.users.updateOne(
+  { name: "Sourav" },
+  { $inc: { age: 1 } }
+)
+
+
+--------------------------------------------------
+8. Replace Document
+--------------------------------------------------
+
+Warning: Replaces the entire document.
+
+db.users.replaceOne(
+  { name: "Sourav" },
+  { name: "Sourav", age: 23, city: "Delhi", role: "SDE" }
+)
+
+
+--------------------------------------------------
+9. Delete Operations
+--------------------------------------------------
+
+Delete one
+db.users.deleteOne({ name: "Sourav" })
+
+Delete many
+db.users.deleteMany({ city: "Delhi" })
+
+Delete all documents
+db.users.deleteMany({})
+
+
+--------------------------------------------------
+10. Sorting
+--------------------------------------------------
+
+Ascending
+db.users.find().sort({ age: 1 })
+
+Descending
+db.users.find().sort({ age: -1 })
+
+
+--------------------------------------------------
+11. Limit and Skip
+--------------------------------------------------
+
+Limit
+db.users.find().limit(5)
+
+Skip
+db.users.find().skip(5)
+
+Pagination example
+db.users.find().skip(10).limit(5)
+
+
+--------------------------------------------------
+12. Count Documents
+--------------------------------------------------
+
+Count
+db.users.countDocuments()
+
+Count with condition
+db.users.countDocuments({ role: "SDE" })
+
+
+--------------------------------------------------
+13. Distinct Values
+--------------------------------------------------
+
+db.users.distinct("city")
+
+
+--------------------------------------------------
+14. Indexing
+--------------------------------------------------
+
+Create index
+db.users.createIndex({ email: 1 })
+
+Show indexes
+db.users.getIndexes()
+
+Drop index
+db.users.dropIndex("email_1")
+
+
+--------------------------------------------------
+15. Aggregation
+--------------------------------------------------
+
+Basic aggregation
+db.users.aggregate([
+  { $match: { role: "SDE" } },
+  { $group: { _id: "$city", total: { $sum: 1 } } }
+])
+
+Average age by city
+db.users.aggregate([
+  {
+    $group: {
+      _id: "$city",
+      avgAge: { $avg: "$age" }
+    }
+  }
+])

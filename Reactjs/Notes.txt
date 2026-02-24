@@ -8,7 +8,7 @@ fast, interactive user experience. It allows developers to create large web appl
 Uses virtual DOM concept to optimize rendering performance by minimizing direct manipulation of the actual DOM.
 
 Declarative vs Imperative:
-Declarative programming is a style of building programs that expresses the logic of computation without describing its control flow. 
+Declarative programming is a style of building programs that expresses the logic of computation without describing its control flow.
 In contrast, imperative programming requires developers to explicitly define the steps the computer must take to achieve a desired outcome.
 React follows the declarative programming paradigm, allowing developers to describe what the UI should look like for a given state,
 and React takes care of updating the DOM to match that state.
