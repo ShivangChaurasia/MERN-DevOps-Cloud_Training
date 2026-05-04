@@ -171,6 +171,7 @@ db.users.find().sort({ age: 1 })
 Descending
 db.users.find().sort({ age: -1 })
 
+db.users.find({name : {$exists:true}}) // check key exist or not
 
 --------------------------------------------------
 11. Limit and Skip
