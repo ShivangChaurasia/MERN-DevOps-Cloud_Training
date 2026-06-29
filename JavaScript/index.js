@@ -188,7 +188,7 @@
         //             5 && "Hi" will give "Hi" (last truthy value)
         //             "" || "Hi" will give "Hi"
         //             null || "Hi" will give "Hi" (Output)
-        // 
+        //
         // let res = (null && "A") || ("" || (5 && "Hi"))
         // console.log(res);
         // let res = !("" || 0) && (NaN || "JS")

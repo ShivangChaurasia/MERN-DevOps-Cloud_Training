@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Counter</title>
+</head>
+<body class="p-100 ml-100">
+    <div class="flex space-x-8">
+        <button id="minus" class="border-2 p-2 bg-red-400 rounded-xl" onclick="Minus()">-</button>
+        <div id="value">0</div>
+        <button id="plus" class="border-2 p-2 bg-green-500 rounded-xl" onclick="plus()">+</button>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+
+    let value = document.getElementById('value');
+    function Minus(){
+        value.innerText--;
+    }
+    function plus(){
+        value.innerText++;
+    }
+</script>
