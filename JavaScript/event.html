@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<style>
+    body {
+        margin-top: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #child {
+        margin-top: 25%;
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        background: red;
+    }
+    #parent {
+        margin-top: 18%;
+        display: flex;
+        justify-content: center;
+        
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        background: yellow;
+    }
+    #grand {
+        display: flex;
+        justify-content: center;
+        width: 300px;
+        height: 300px;
+        border: 2px solid black;
+        background: green;
+    }
+</style>
+<body>
+    <div id="grand">
+        <div id="parent">
+            <div id="child">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
