@@ -1,3 +1,4 @@
-omise.resolve().then(()=>{
-    console.log("Promise")
-})
+login();
+getUser();
+getOrders();
+getOrderDetails();
