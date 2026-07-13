@@ -1,11 +1,14 @@
 
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 
 export default function Login(){
 
     const [email,setEmail] = useState("");
     const [pass, setPass] = useState("");
+
+    const navigate = useNavigate();
 
 
     const handleEmail = (e)=>{
@@ -25,12 +28,13 @@ export default function Login(){
     const handleSubmit = (event)=>{
         event.preventDefault();
         if(authenticate()){
-            alert(`Login Successful!! Your email is ${email}`);
+            navigate('/dashboard');
+            // alert(`Login Successful!! Your email is ${email}`);
         }else{
             alert('Credentials Wrong!!')
         }
     }
-    
+
     return(
         <>
             <form onSubmit={handleSubmit}>

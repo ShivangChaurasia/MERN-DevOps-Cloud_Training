@@ -5,6 +5,7 @@ import Home from "./home.jsx";
 import Login from "./login.jsx";
 import SignUp from "./signup.jsx";
 import { Navigation } from "./Navigation.jsx";
+import Dashboard from "./dashboard.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Home></Home>}></Route>
             <Route path="/login" element={<Login></Login>}></Route>
             <Route path="/signup" element={<SignUp></SignUp>}></Route>
+            <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         </Routes>
       </BrowserRouter>
 
