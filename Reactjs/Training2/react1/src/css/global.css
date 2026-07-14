@@ -4,17 +4,43 @@
   padding: 0;
 }
 
+/* Light Theme (Default) */
+[data-theme='light'] {
+  --primary-color: #0066cc;
+  --primary-dark: #0052a3;
+  --background-color: #f4f6f8;
+  --surface-color: #ffffff;
+  --text-color: #333333;
+  --text-light: #666666;
+  --border-color: #cccccc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  --primary-color: #4a9eff;
+  --primary-dark: #357abd;
+  --background-color: #1a1a1a;
+  --surface-color: #2d2d2d;
+  --text-color: #e8e8e8;
+  --text-light: #b0b0b0;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--background-color);
 }
 
 .main-content {
@@ -26,11 +52,13 @@ body {
 
 a {
   text-decoration: none;
-  color: #0066cc;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: var(--primary-dark);
 }
 
 button {
@@ -39,13 +67,14 @@ button {
   font-size: 14px;
   padding: 8px 16px;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: #0066cc;
+  border: 1px solid var(--border-color);
+  background-color: var(--primary-color);
   color: white;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #0052a3;
+  background-color: var(--primary-dark);
 }
 
 input {

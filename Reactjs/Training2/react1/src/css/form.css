@@ -1,36 +1,41 @@
 .form-container {
   max-width: 480px;
   margin: 30px auto;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 25px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .form-title {
   font-size: 20px;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
 .form-display-box {
   margin-top: 25px;
   padding: 15px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
   border-radius: 4px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .display-title {
   font-size: 16px;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 5px;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .display-content p {
   margin-bottom: 5px;
-  color: #444;
+  color: var(--text-light);
   font-size: 14px;
+  transition: color 0.3s ease;
 }

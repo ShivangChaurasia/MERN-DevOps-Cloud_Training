@@ -1,4 +1,5 @@
 import { NavLink, Link } from 'react-router-dom';
+import { ThemeToggle } from './Components/ThemeToggle';
 import './css/navigation.css';
 
 export function Navigation() {
@@ -21,6 +22,7 @@ export function Navigation() {
           <NavLink to="/signup" className="nav-cta">
             Sign Up
           </NavLink>
+          <ThemeToggle />
         </nav>
       </div>
     </header>

@@ -5,12 +5,13 @@
 }
 
 .auth-card {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 30px;
   width: 100%;
   max-width: 380px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .auth-fieldset {
@@ -21,16 +22,18 @@
 
 .auth-title {
   font-size: 22px;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
   margin-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
 .auth-subtitle {
   text-align: center;
-  color: #666;
+  color: var(--text-light);
   font-size: 14px;
   margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
 .form-group {
@@ -41,8 +44,9 @@
   display: block;
   font-size: 14px;
   font-weight: bold;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
 .form-input {
