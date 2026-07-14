@@ -1,0 +1,36 @@
+.form-container {
+  max-width: 480px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 25px;
+}
+
+.form-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-display-box {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.display-title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.display-content p {
+  margin-bottom: 5px;
+  color: #444;
+  font-size: 14px;
+}

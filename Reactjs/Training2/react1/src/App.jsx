@@ -1,30 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Form from "./form.jsx";
-// import HooksDemo from "./hooks.jsx";
 import Home from "./home.jsx";
 import Login from "./login.jsx";
 import SignUp from "./signup.jsx";
 import { Navigation } from "./Navigation.jsx";
 import Dashboard from "./dashboard.jsx";
+import "./css/global.css";
 
 function App() {
   return (
-    <div>
-      {/* <Form />
-      <HooksDemo /> */}
-
+    <div className="app-container">
       <BrowserRouter>
-        <Navigation></Navigation>
-        <Routes>
-            <Route path="/" element={<Home></Home>}></Route>
-            <Route path="/login" element={<Login></Login>}></Route>
-            <Route path="/signup" element={<SignUp></SignUp>}></Route>
-            <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
-        </Routes>
+        <Navigation />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </main>
       </BrowserRouter>
-
     </div>
   );
 }
 
-export default App
+export default App;

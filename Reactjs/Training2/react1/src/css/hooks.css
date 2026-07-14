@@ -1,0 +1,47 @@
+.hooks-container {
+  max-width: 480px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.hooks-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hooks-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.hooks-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hooks-btn {
+  padding: 8px 14px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.hooks-btn:hover {
+  background-color: #0052a3;
+}
+
+.hooks-output {
+  padding: 10px;
+  background-color: #e6f0fa;
+  color: #0066cc;
+  border-radius: 4px;
+  font-size: 14px;
+}

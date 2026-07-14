@@ -1,55 +1,81 @@
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import "./css/login.css";
 
-import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
 
+  const navigate = useNavigate();
 
-export default function Login(){
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
 
-    const [email,setEmail] = useState("");
-    const [pass, setPass] = useState("");
+  const handlePass = (e) => {
+    setPass(e.target.value);
+  };
 
-    const navigate = useNavigate();
-
-
-    const handleEmail = (e)=>{
-        setEmail(e.target.value);
+  const authenticate = () => {
+    if (pass.length >= 8 && /[A-Za-z]/.test(pass) && /[0-9]/.test(pass)) {
+      return true;
     }
-    const handlePass = (e)=>{
-        setPass(e.target.value);
+    return false;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (authenticate()) {
+      navigate('/dashboard');
+    } else {
+      alert('Credentials Wrong!! Password must be at least 8 characters and contain both letters and numbers.');
     }
+  };
 
-    const authenticate=()=>{
-        if(pass.length>=8 && /[A-Za-z]/.test(pass) && /[0-9]/.test(pass)){
-            return true;
-        }
-        return false;
-    }
+  return (
+    <div className="auth-container">
+      <div className="auth-card">
+        <form onSubmit={handleSubmit}>
+          <fieldset className="auth-fieldset">
+            <h1 className="auth-title">Welcome Back</h1>
+            <p className="auth-subtitle">Please enter your details to sign in</p>
 
-    const handleSubmit = (event)=>{
-        event.preventDefault();
-        if(authenticate()){
-            navigate('/dashboard');
-            // alert(`Login Successful!! Your email is ${email}`);
-        }else{
-            alert('Credentials Wrong!!')
-        }
-    }
+            <div className="form-group">
+              <label htmlFor="email">Email Address</label>
+              <input
+                id="email"
+                className="form-input"
+                type="email"
+                placeholder="Enter your E-Mail"
+                value={email}
+                onChange={handleEmail}
+                required
+              />
+            </div>
 
-    return(
-        <>
-            <form onSubmit={handleSubmit}>
-                <h1>Login Page</h1>
-                <input type="email" placeholder="Enter your E-Mail" value={email} onChange={handleEmail}></input>
-                <br></br>
-                <br></br>
-                <input type="password" placeholder="Password" value={pass} onChange={handlePass}></input>
-                <br></br>
-                <br></br>
-                <br></br>
-                <button type="submit">Submit</button>
-            </form>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                id="password"
+                className="form-input"
+                type="password"
+                placeholder="Password"
+                value={pass}
+                onChange={handlePass}
+                required
+              />
+            </div>
 
-
-        </>
-    )
+            <button type="submit" className="auth-button">
+              Sign In
+            </button>
+          </fieldset>
+        </form>
+        
+        <p className="auth-footer">
+          Don't have an account? <Link to="/signup" className="auth-link">Sign Up</Link>
+        </p>
+      </div>
+    </div>
+  );
 }

@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import "./css/hooks.css";
 
 function HooksDemo() {
   const [count, setCount] = useState(0);
@@ -10,16 +11,20 @@ function HooksDemo() {
   }, [name, count]);
 
   return (
-    <div style={{ marginTop: "20px", padding: "12px", border: "1px solid #ccc" }}>
-      <h3>useMemo Example</h3>
-      <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Enter name"
-        style={{ marginRight: "8px" }}
-      />
-      <button onClick={() => setCount(count + 1)}>Render count: {count}</button>
-      <p>{memoizedMessage}</p>
+    <div className="hooks-container">
+      <h3 className="hooks-title">useMemo Example</h3>
+      <div className="hooks-controls">
+        <input
+          className="hooks-input"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter name"
+        />
+        <button className="hooks-btn" onClick={() => setCount(count + 1)}>
+          Render count: {count}
+        </button>
+      </div>
+      <p className="hooks-output">{memoizedMessage}</p>
     </div>
   );
 }
