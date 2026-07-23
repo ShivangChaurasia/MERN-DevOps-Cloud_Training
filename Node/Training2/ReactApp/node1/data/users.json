@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1784367780322,
+    "fullName": "Test User",
+    "email": "test@example.com",
+    "password": "secret123"
+  },
+  {
+    "id": 1784368331736,
+    "fullName": "Shivang Chaurasia",
+    "email": "shiva17ng@gmail.com",
+    "password": "Shivang123@"
+  }
+]

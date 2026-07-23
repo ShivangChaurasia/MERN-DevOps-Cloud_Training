@@ -1,0 +1,55 @@
+.hooks-container {
+  max-width: 480px;
+  margin: 30px auto;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 20px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hooks-title {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.hooks-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.hooks-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.hooks-btn {
+  padding: 8px 14px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hooks-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.hooks-output {
+  padding: 10px;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
